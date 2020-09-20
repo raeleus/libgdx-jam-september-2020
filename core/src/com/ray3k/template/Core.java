@@ -12,7 +12,6 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.dongbat.jbump.CollisionFilter;
-import com.dongbat.jbump.Item;
 import com.dongbat.jbump.Response;
 import com.dongbat.jbump.World;
 import com.esotericsoftware.spine.AnimationStateData;
@@ -36,7 +35,7 @@ public class Core extends JamGame {
     public static CollisionFilter defaultCollisionFilter;
     public static CrossPlatformWorker crossPlatformWorker;
     public enum Binding {
-        LEFT, RIGHT, UP, DOWN, SHOOT, SPECIAL, SHIELD;
+        LEFT, RIGHT, UP, DOWN, ATTACK;
     }
     public static float bgm;
     public static float sfx;
@@ -123,8 +122,6 @@ public class Core extends JamGame {
         JamScreen.addKeyBinding(Binding.RIGHT, Input.Keys.RIGHT);
         JamScreen.addKeyBinding(Binding.UP, Input.Keys.UP);
         JamScreen.addKeyBinding(Binding.DOWN, Input.Keys.DOWN);
-        JamScreen.addKeyBinding(Binding.SHOOT, Input.Keys.Z);
-        JamScreen.addKeyBinding(Binding.SHIELD, Input.Keys.X);
-        JamScreen.addKeyBinding(Binding.SPECIAL, Input.Keys.C);
+        JamScreen.addKeyBinding(Binding.ATTACK, Input.Keys.Z);
     }
 }
