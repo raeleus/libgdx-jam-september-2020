@@ -13,6 +13,7 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.*;
+import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
@@ -67,12 +68,31 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
         
         entityController.clear();
-        PlayerEntity playerEntity = new PlayerEntity();
-        entityController.add(playerEntity);
-        MonsterEntity monsterEntity = new MonsterEntity();
-        entityController.add(monsterEntity);
-        WallEntity wallEntity = new WallEntity();
-        entityController.add(wallEntity);
+        
+        var ogmoReader = new OgmoReader();
+        ogmoReader.addListener(new OgmoAdapter() {
+            @Override
+            public void grid(int col, int row, int x, int y, int width, int height, int id) {
+                switch (id) {
+                    case 1:
+                        var wallEntity = new WallEntity();
+                        entityController.add(wallEntity);
+                        wallEntity.setPosition(x, y);
+                        break;
+                    case 3:
+                        var playerEntity = new PlayerEntity();
+                        entityController.add(playerEntity);
+                        playerEntity.setPosition(x, y);
+                        break;
+                    case 4:
+                        var monsterEntity = new MonsterEntity();
+                        entityController.add(monsterEntity);
+                        monsterEntity.setPosition(x, y);
+                        break;
+                }
+            }
+        });
+        ogmoReader.readFile(Gdx.files.internal("levels/test.json"));
     }
     
     @Override
