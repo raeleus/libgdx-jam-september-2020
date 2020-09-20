@@ -71,6 +71,8 @@ public class GameScreen extends JamScreen {
         entityController.add(playerEntity);
         MonsterEntity monsterEntity = new MonsterEntity();
         entityController.add(monsterEntity);
+        WallEntity wallEntity = new WallEntity();
+        entityController.add(wallEntity);
     }
     
     @Override
