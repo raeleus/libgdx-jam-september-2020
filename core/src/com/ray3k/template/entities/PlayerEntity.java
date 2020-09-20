@@ -20,6 +20,7 @@ public class PlayerEntity extends Entity {
     
     @Override
     public void act(float delta) {
+        //movement
         if (gameScreen.isAnyBindingPressed(LEFT, RIGHT, UP, DOWN)) {
             setSpeed(MOVE_SPEED);
             float direction = 0;
@@ -35,6 +36,9 @@ public class PlayerEntity extends Entity {
         } else {
             setSpeed(0);
         }
+        
+        //camera
+        gameScreen.camera.position.set(x, y, 0);
     }
     
     @Override
