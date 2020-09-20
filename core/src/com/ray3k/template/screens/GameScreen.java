@@ -9,6 +9,8 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -28,7 +30,9 @@ public class GameScreen extends JamScreen {
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
-    public Viewport viewport2;
+    public Viewport viewportRight;
+    public OrthographicCamera cameraRight;
+    public Array<PlayerEntity> players;
     
     public GameScreen() {
         gameScreen = this;
@@ -68,12 +72,12 @@ public class GameScreen extends JamScreen {
         
         camera = new OrthographicCamera();
         viewport = new FitViewport(512, 576, camera);
-        viewport2 = new FitViewport(512, 576, camera);
-        
-        camera.position.set(512, 288, 0);
+        cameraRight = new OrthographicCamera();
+        viewportRight = new FitViewport(512, 576, cameraRight);
         
         entityController.clear();
         
+        players = new Array<>();
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
             @Override
@@ -88,12 +92,32 @@ public class GameScreen extends JamScreen {
                         var playerEntity = new PlayerEntity();
                         playerEntity.setPosition(x, y);
                         entityController.add(playerEntity);
+                        players.add(playerEntity);
                         break;
                     case 4:
                         var monsterEntity = new MonsterEntity();
                         monsterEntity.setPosition(x, y);
                         entityController.add(monsterEntity);
                         break;
+                }
+            }
+    
+            @Override
+            public void levelComplete() {
+                if (players.size > 0) {
+                    var playerLeft = players.first();
+                    var playerRight = players.peek();
+                    
+                    for (var player : players) {
+                        if (player.x < playerLeft.x) playerLeft = player;
+                        if (player.x > playerRight.x) playerRight = player;
+                    }
+                    
+                    var cameraEntity = new CameraEntity(camera, playerLeft);
+                    entityController.add(cameraEntity);
+    
+                    cameraEntity = new CameraEntity(cameraRight, playerRight);
+                    entityController.add(cameraEntity);
                 }
             }
         });
@@ -125,8 +149,8 @@ public class GameScreen extends JamScreen {
         batch.end();
         
         batch.begin();
-        viewport2.apply();
-        batch.setProjectionMatrix(camera.combined);
+        viewportRight.apply();
+        batch.setProjectionMatrix(cameraRight.combined);
         entityController.draw(paused ? 0 : delta);
         batch.end();
         
@@ -145,8 +169,8 @@ public class GameScreen extends JamScreen {
             viewport.update(width / 2, height);
             viewport.setScreenBounds(0, 0, width / 2, height);
             
-            viewport2.update(width / 2, height);
-            viewport2.setScreenBounds(width / 2, 0, width / 2, height);
+            viewportRight.update(width / 2, height);
+            viewportRight.setScreenBounds(width / 2, 0, width / 2, height);
             
             stage.getViewport().update(width, height, true);
         }

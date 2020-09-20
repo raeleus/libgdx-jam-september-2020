@@ -43,9 +43,6 @@ public class PlayerEntity extends Entity {
         } else {
             setSpeed(0);
         }
-        
-        //camera
-        gameScreen.camera.position.set(x, y, 0);
     }
     
     @Override
