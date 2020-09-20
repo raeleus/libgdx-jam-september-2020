@@ -142,7 +142,7 @@ public class GameScreen extends JamScreen {
         }
         stage.act(delta);
         if (isButtonJustPressed(Buttons.LEFT)) {
-            core.transition(new MenuScreen(), new TransitionSquish(Interpolation.fastSlow), 1f);
+            core.transition(new MenuScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
         }
     }
     
