@@ -55,27 +55,34 @@ window
   index: -1
 
 textures2.png
-size: 64,64
+size: 1024,1024
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+game/map-test
+  rotate: false
+  xy: 1, 19
+  size: 960, 960
+  orig: 960, 960
+  offset: 0, 0
+  index: -1
 game/monster
   rotate: false
-  xy: 20, 38
+  xy: 1, 1
   size: 16, 16
   orig: 16, 17
   offset: 0, 0
   index: -1
 game/player
   rotate: true
-  xy: 1, 45
+  xy: 37, 8
   size: 9, 17
   orig: 16, 17
   offset: 4, 0
   index: -1
 game/wall
   rotate: false
-  xy: 38, 38
+  xy: 19, 1
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

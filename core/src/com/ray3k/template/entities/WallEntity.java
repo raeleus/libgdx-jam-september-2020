@@ -12,8 +12,6 @@ public class WallEntity extends Entity {
     
     @Override
     public void create() {
-        setSkeletonData(spine_wall, spine_wallAnimationData);
-    
         setCollisionBox(0, 0, 16, 16, CollisionFilter.defaultFilter);
     }
     

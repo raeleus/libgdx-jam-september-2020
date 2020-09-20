@@ -96,18 +96,34 @@ public class GameScreen extends JamScreen {
                         wallEntity.setPosition(x, y);
                         entityController.add(wallEntity);
                         break;
-                    case 3:
+                }
+            }
+    
+            @Override
+            public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
+                               boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
+                               ObjectMap<String, OgmoValue> valuesMap) {
+                switch (name) {
+                    case "player":
                         var playerEntity = new PlayerEntity();
                         playerEntity.setPosition(x, y);
                         entityController.add(playerEntity);
                         players.add(playerEntity);
                         break;
-                    case 4:
+                    case "monster":
                         var monsterEntity = new MonsterEntity();
                         monsterEntity.setPosition(x, y);
                         entityController.add(monsterEntity);
                         break;
                 }
+            }
+    
+            @Override
+            public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
+                              String folder) {
+                var path = folder + "/" + texture;
+                path = path.substring(0, path.length() - 4);
+                entityController.add(new DecalEntity(path, centerX, centerY));
             }
     
             @Override
@@ -131,7 +147,7 @@ public class GameScreen extends JamScreen {
                 }
             }
         });
-        ogmoReader.readFile(Gdx.files.internal("levels/test.json"));
+        ogmoReader.readFile(Gdx.files.internal("levels/test2.json"));
     }
     
     @Override

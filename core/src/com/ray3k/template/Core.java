@@ -40,6 +40,7 @@ public class Core extends JamGame {
     public static float bgm;
     public static float sfx;
     public static Preferences preferences;
+    public static int BACKGROUND_DEPTH = 1000;
     
     @Override
     public void create() {
