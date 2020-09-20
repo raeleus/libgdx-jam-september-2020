@@ -57,7 +57,7 @@ window
 textures2.png
 size: 64,64
 format: RGBA8888
-filter: Linear,Linear
+filter: Nearest,Nearest
 repeat: none
 game/monster
   rotate: false
