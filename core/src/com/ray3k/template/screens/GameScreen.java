@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -79,6 +80,13 @@ public class GameScreen extends JamScreen {
         players = new Array<>();
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
+            int width;
+            @Override
+            public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
+                              ObjectMap<String, OgmoValue> valuesMap) {
+                this.width = width;
+            }
+    
             @Override
             public void grid(int col, int row, int x, int y, int width, int height, int id) {
                 switch (id) {
@@ -112,10 +120,12 @@ public class GameScreen extends JamScreen {
                         if (player.x > playerRight.x) playerRight = player;
                     }
                     
-                    var cameraEntity = new CameraEntity(camera, playerLeft);
+                    var cameraEntity = new CameraEntity(viewport, camera, playerLeft);
+                    cameraEntity.boundaryRight = width / 2f;
                     entityController.add(cameraEntity);
     
-                    cameraEntity = new CameraEntity(cameraRight, playerRight);
+                    cameraEntity = new CameraEntity(viewportRight, cameraRight, playerRight);
+                    cameraEntity.boundaryLeft = width / 2f;
                     entityController.add(cameraEntity);
                 }
             }
