@@ -1,0 +1,390 @@
+{
+"skeleton": { "hash": "Hz65PrW0q+4BMbDZ7xJ52KEk8zA", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "logo/libgdx-l", "parent": "root", "length": 28.45, "rotation": 88.91, "x": 368.8, "y": 265.35 },
+	{ "name": "logo/libgdx-i", "parent": "root", "length": 28.45, "rotation": 89.9, "x": 391.09, "y": 263.54 },
+	{ "name": "logo/libgdx-b", "parent": "root", "length": 47.42, "rotation": 90.63, "x": 422.77, "y": 263.34 },
+	{ "name": "logo/libgdx-g", "parent": "root", "length": 61.21, "rotation": 89.43, "x": 482.05, "y": 264.82 },
+	{ "name": "logo/libgdx-d", "parent": "root", "length": 55.42, "rotation": 90.42, "x": 552.43, "y": 262.9 },
+	{ "name": "logo/libgdx-x", "parent": "root", "length": 51.38, "rotation": 89.72, "x": 621.79, "y": 261.97 },
+	{ "name": "logo/libgdx-machete", "parent": "root", "length": 77.75, "rotation": 87.77, "x": 725.3, "y": 270.35 },
+	{ "name": "logo/libgdx-mask", "parent": "root", "length": 67.6, "rotation": -90, "x": 622.38, "y": 319.79 },
+	{ "name": "logo/libgdx-blood", "parent": "root", "length": 94, "rotation": -1.17, "x": 551.68, "y": 263.32 },
+	{ "name": "logo/libgdx-splatter", "parent": "root", "length": 56.33, "rotation": 0.76, "x": 551.68, "y": 368.02 }
+],
+"slots": [
+	{ "name": "logo/white", "bone": "root", "attachment": "logo/white" },
+	{ "name": "logo/libgdx-blood", "bone": "logo/libgdx-blood", "dark": "000000", "attachment": "logo/libgdx-blood" },
+	{ "name": "logo/libgdx-l", "bone": "logo/libgdx-l", "attachment": "logo/libgdx-l" },
+	{ "name": "logo/libgdx-i", "bone": "logo/libgdx-i", "attachment": "logo/libgdx-i" },
+	{ "name": "logo/libgdx-b", "bone": "logo/libgdx-b", "attachment": "logo/libgdx-b" },
+	{ "name": "logo/libgdx-g", "bone": "logo/libgdx-g", "attachment": "logo/libgdx-g" },
+	{ "name": "logo/libgdx-d", "bone": "logo/libgdx-d", "dark": "000000", "attachment": "logo/libgdx-d" },
+	{ "name": "logo/libgdx-x", "bone": "logo/libgdx-x", "dark": "000000", "attachment": "logo/libgdx-x" },
+	{ "name": "logo/libgdx-face", "bone": "root", "attachment": "logo/libgdx-tears" },
+	{ "name": "logo/libgdx-mask", "bone": "logo/libgdx-mask", "dark": "000000", "attachment": "logo/libgdx-mask" },
+	{ "name": "logo/libgdx-machete", "bone": "logo/libgdx-machete", "dark": "000000", "attachment": "logo/libgdx-machete" },
+	{ "name": "logo/libgdx-splatter", "bone": "logo/libgdx-splatter", "attachment": "logo/libgdx-splatter-3" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"logo/libgdx-b": {
+				"logo/libgdx-b": { "x": 24.95, "y": -4.92, "rotation": -90.63, "width": 39, "height": 51 }
+			},
+			"logo/libgdx-blood": {
+				"logo/libgdx-blood": { "x": 3.89, "y": 2.94, "rotation": 1.17, "width": 148, "height": 55 }
+			},
+			"logo/libgdx-d": {
+				"logo/libgdx-d": {
+					"type": "mesh",
+					"uvs": [ 1, 1, 0, 1, 0, 0, 1, 0 ],
+					"triangles": [ 1, 2, 3, 1, 3, 0 ],
+					"vertices": [ -0.4, -33.27, 0.07, 30.73, 51.07, 30.35, 50.6, -33.65 ],
+					"hull": 4,
+					"edges": [ 0, 2, 2, 4, 4, 6, 0, 6 ],
+					"width": 64,
+					"height": 51
+				}
+			},
+			"logo/libgdx-face": {
+				"logo/libgdx-face": { "x": 555.78, "y": 287.5, "width": 54, "height": 59 },
+				"logo/libgdx-tears": { "x": 555.78, "y": 287.5, "width": 71, "height": 60 }
+			},
+			"logo/libgdx-g": {
+				"logo/libgdx-g": { "x": 23.6, "y": -1.72, "rotation": -89.43, "width": 64, "height": 51 }
+			},
+			"logo/libgdx-i": {
+				"logo/libgdx-i": { "x": 24.66, "y": 0.7, "rotation": -89.9, "width": 15, "height": 51 }
+			},
+			"logo/libgdx-l": {
+				"logo/libgdx-l": { "x": 23.08, "y": 0.5, "rotation": -88.91, "width": 15, "height": 51 }
+			},
+			"logo/libgdx-machete": {
+				"logo/libgdx-machete": { "x": 33.31, "y": 0.29, "scaleX": -1, "rotation": -87.77, "width": 25, "height": 91 }
+			},
+			"logo/libgdx-mask": {
+				"logo/libgdx-mask": { "x": 30.27, "y": 1.01, "rotation": 90, "width": 49, "height": 67 }
+			},
+			"logo/libgdx-splatter": {
+				"logo/libgdx-splatter-1": { "x": 3.9, "y": -0.05, "rotation": -0.76, "width": 23, "height": 22 },
+				"logo/libgdx-splatter-2": { "x": 3.9, "y": -0.05, "rotation": -0.76, "width": 20, "height": 20 },
+				"logo/libgdx-splatter-3": { "x": 3.9, "y": -0.05, "rotation": -0.76, "width": 23, "height": 19 }
+			},
+			"logo/libgdx-x": {
+				"logo/libgdx-x": { "x": 26.37, "y": -0.7, "rotation": -89.72, "width": 78, "height": 51 }
+			},
+			"logo/white": {
+				"logo/white": { "x": 512, "y": 288, "scaleX": 1024, "scaleY": 576, "width": 1, "height": 1 }
+			}
+		}
+	}
+],
+"events": {
+	"logo/libgdx-chop": { "audio": "logo/libgdx-chop.mp3" },
+	"logo/libgdx-kikiki": { "audio": "logo/libgdx-kikiki.mp3" },
+	"logo/libgdx-loser": { "audio": "logo/libgdx-loser.mp3" },
+	"logo/libgdx-mask-sound": { "audio": "logo/libgdx-mask-sound.mp3" },
+	"logo/libgdx-scream": { "audio": "logo/libgdx-scream.mp3" },
+	"logo/libgdx-title": { "audio": "logo/libgdx-title.mp3" }
+},
+"animations": {
+	"animation": {
+		"slots": {
+			"logo/libgdx-blood": {
+				"twoColor": [
+					{ "time": 9.7, "light": "ffffffff", "dark": "000000" },
+					{ "time": 10.3333, "light": "ffffffff", "dark": "ffffff", "curve": "stepped" },
+					{ "time": 11.3333, "light": "ffffffff", "dark": "ffffff" }
+				]
+			},
+			"logo/libgdx-d": {
+				"twoColor": [
+					{ "time": 9.7, "light": "ffffffff", "dark": "000000" },
+					{ "time": 10.3333, "light": "ffffffff", "dark": "ffffff" }
+				]
+			},
+			"logo/libgdx-face": {
+				"attachment": [
+					{ "name": null },
+					{ "time": 1.5333, "name": "logo/libgdx-face" },
+					{ "time": 3.3667, "name": null },
+					{ "time": 4.7667, "name": "logo/libgdx-tears" },
+					{ "time": 6.1, "name": null }
+				]
+			},
+			"logo/libgdx-machete": {
+				"twoColor": [
+					{ "time": 9.7, "light": "ffffffff", "dark": "000000" },
+					{ "time": 10.3333, "light": "ffffffff", "dark": "ffffff" }
+				],
+				"attachment": [
+					{ "name": null },
+					{ "time": 4.3333, "name": "logo/libgdx-machete" }
+				]
+			},
+			"logo/libgdx-mask": {
+				"twoColor": [
+					{ "time": 9.7, "light": "ffffffff", "dark": "000000" },
+					{ "time": 10.3333, "light": "ffffffff", "dark": "ffffff" }
+				]
+			},
+			"logo/libgdx-splatter": {
+				"color": [
+					{ "time": 6.1, "color": "ffffffff" },
+					{ "time": 6.4333, "color": "ffffff00" },
+					{ "time": 6.4667, "color": "ffffffff" },
+					{ "time": 6.8, "color": "ffffff00" },
+					{ "time": 6.8333, "color": "ffffffff" },
+					{ "time": 7.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "name": null },
+					{ "time": 6.1, "name": "logo/libgdx-splatter-1" },
+					{ "time": 6.4667, "name": "logo/libgdx-splatter-2" },
+					{ "time": 6.8333, "name": "logo/libgdx-splatter-3" }
+				]
+			},
+			"logo/libgdx-x": {
+				"twoColor": [
+					{ "time": 9.7, "light": "ffffffff", "dark": "000000" },
+					{ "time": 10.3333, "light": "ffffffff", "dark": "ffffff" }
+				]
+			}
+		},
+		"bones": {
+			"logo/libgdx-l": {
+				"translate": [
+					{ "time": 4.8667 },
+					{ "time": 5.5333, "x": -401.58, "y": 211.89 }
+				],
+				"scale": [
+					{ "x": 0, "curve": 0.25, "c3": 0.34, "c4": 3.76 },
+					{ "time": 0.4 }
+				]
+			},
+			"logo/libgdx-i": {
+				"translate": [
+					{ "time": 4.9333 },
+					{ "time": 5.6, "x": -147.31, "y": 326.92 }
+				],
+				"scale": [
+					{ "x": 0, "curve": "stepped" },
+					{ "time": 0.1333, "x": 0, "curve": 0.25, "c3": 0.34, "c4": 3.76 },
+					{ "time": 0.5333 }
+				]
+			},
+			"logo/libgdx-b": {
+				"translate": [
+					{ "time": 4.9 },
+					{ "time": 5.5667, "x": -470.12, "y": -39.33 }
+				],
+				"scale": [
+					{ "x": 0, "curve": "stepped" },
+					{ "time": 0.2333, "x": 0, "curve": 0.25, "c3": 0.34, "c4": 3.76 },
+					{ "time": 0.6333 }
+				]
+			},
+			"logo/libgdx-g": {
+				"translate": [
+					{ "time": 4.8333 },
+					{ "time": 5.5, "x": -320.28, "y": -385.84 }
+				],
+				"scale": [
+					{ "x": 0, "curve": "stepped" },
+					{ "time": 0.3667, "x": 0, "curve": 0.25, "c3": 0.34, "c4": 3.76 },
+					{ "time": 0.7667 }
+				]
+			},
+			"logo/libgdx-x": {
+				"scale": [
+					{ "x": 0, "curve": "stepped" },
+					{ "time": 0.6, "x": 0, "curve": 0.25, "c3": 0.34, "c4": 3.76 },
+					{ "time": 1 }
+				]
+			},
+			"logo/libgdx-mask": {
+				"scale": [
+					{ "x": 0, "curve": "stepped" },
+					{ "time": 3.8, "x": 0 },
+					{ "time": 4.1333 }
+				]
+			},
+			"logo/libgdx-machete": {
+				"rotate": [
+					{ "time": 4.3333, "angle": 41.83, "curve": "stepped" },
+					{ "time": 5.9333, "angle": 41.83 },
+					{ "time": 6.1, "angle": 105.71 },
+					{ "time": 6.3, "angle": 41.83 },
+					{ "time": 6.4667, "angle": 105.71 },
+					{ "time": 6.6333, "angle": 41.83 },
+					{ "time": 6.8333, "angle": 105.71 },
+					{ "time": 7, "angle": 41.83 }
+				],
+				"translate": [
+					{ "time": 4.3333, "x": -108.97, "y": 21.19 },
+					{ "time": 4.8333, "x": -123.1, "y": 14.13 }
+				],
+				"scale": [
+					{ "time": 4.3333, "x": 0 },
+					{ "time": 4.8333 }
+				]
+			},
+			"logo/libgdx-blood": {
+				"scale": [
+					{ "x": 0, "y": 0, "curve": "stepped" },
+					{ "time": 6.1, "x": 0, "y": 0 },
+					{ "time": 8.6667 }
+				]
+			},
+			"logo/libgdx-splatter": {
+				"translate": [
+					{
+						"time": 6.1,
+						"x": -2.25,
+						"y": -88.62,
+						"curve": 0.295,
+						"c2": 0.66,
+						"c3": 0.781,
+						"c4": 0.96
+					},
+					{
+						"time": 6.2667,
+						"x": -18.78,
+						"y": -7.89,
+						"curve": 0.508,
+						"c2": 0.22,
+						"c3": 0.921,
+						"c4": 0.59
+					},
+					{ "time": 6.4333, "x": -35.3, "y": -95.38 },
+					{
+						"time": 6.4667,
+						"x": -2.25,
+						"y": -88.62,
+						"curve": 0.295,
+						"c2": 0.66,
+						"c3": 0.781,
+						"c4": 0.96
+					},
+					{
+						"time": 6.6333,
+						"x": -52.19,
+						"y": -17.27,
+						"curve": 0.508,
+						"c2": 0.22,
+						"c3": 0.921,
+						"c4": 0.59
+					},
+					{
+						"time": 6.8,
+						"x": -102.14,
+						"y": -88.62,
+						"curve": 0.295,
+						"c2": 0.66,
+						"c3": 0.781,
+						"c4": 0.96
+					},
+					{
+						"time": 6.8333,
+						"x": -2.25,
+						"y": -88.62,
+						"curve": 0.295,
+						"c2": 0.66,
+						"c3": 0.781,
+						"c4": 0.96
+					},
+					{
+						"time": 7,
+						"x": -18.78,
+						"y": -7.89,
+						"curve": 0.508,
+						"c2": 0.22,
+						"c3": 0.921,
+						"c4": 0.59
+					},
+					{ "time": 7.1667, "x": -35.3, "y": -95.38 }
+				]
+			}
+		},
+		"deform": {
+			"default": {
+				"logo/libgdx-d": {
+					"logo/libgdx-d": [
+						{
+							"offset": 4,
+							"vertices": [ -51.0137, 0.37701, -51.0137, 0.37701 ],
+							"curve": "stepped"
+						},
+						{
+							"time": 0.4667,
+							"offset": 4,
+							"vertices": [ -51.0137, 0.37701, -51.0137, 0.37701 ],
+							"curve": 0.25,
+							"c3": 0.34,
+							"c4": 3.76
+						},
+						{ "time": 0.8667, "curve": "stepped" },
+						{ "time": 6.1 },
+						{
+							"time": 6.3,
+							"offset": 4,
+							"vertices": [ -24.66544, -15.96899, -23.12271, 18.25793 ],
+							"curve": "stepped"
+						},
+						{
+							"time": 6.4667,
+							"offset": 4,
+							"vertices": [ -24.66544, -15.96899, -23.12271, 18.25793 ]
+						},
+						{
+							"time": 6.6333,
+							"offset": 4,
+							"vertices": [ -34.93488, -22.14111, -36.16992, 20.62744 ],
+							"curve": "stepped"
+						},
+						{
+							"time": 6.8333,
+							"offset": 4,
+							"vertices": [ -34.93488, -22.14111, -36.16992, 20.62744 ]
+						},
+						{
+							"time": 7,
+							"offset": 4,
+							"vertices": [ -42.8699, -19.81042, -43.54126, 22.38629 ]
+						}
+					]
+				}
+			}
+		},
+		"drawOrder": [
+			{
+				"time": 4.3333,
+				"offsets": [
+					{ "slot": "logo/libgdx-machete", "offset": -3 }
+				]
+			},
+			{
+				"time": 4.6333,
+				"offsets": [
+					{ "slot": "logo/libgdx-mask", "offset": 1 }
+				]
+			},
+			{ "time": 4.7667 }
+		],
+		"events": [
+			{ "name": "logo/libgdx-title" },
+			{ "time": 1.5333, "name": "logo/libgdx-loser" },
+			{ "time": 3.8, "name": "logo/libgdx-mask-sound" },
+			{ "time": 4.7667, "name": "logo/libgdx-scream" },
+			{ "time": 6.0667, "name": "logo/libgdx-chop" },
+			{ "time": 6.4333, "name": "logo/libgdx-chop" },
+			{ "time": 6.8333, "name": "logo/libgdx-chop" },
+			{ "time": 8.1333, "name": "logo/libgdx-kikiki" }
+		]
+	},
+	"stand": {}
+}
+}

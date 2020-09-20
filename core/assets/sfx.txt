@@ -1,0 +1,9 @@
+sfx/click.mp3
+sfx/logo/libgdx-chop.mp3
+sfx/logo/libgdx-kikiki.mp3
+sfx/logo/libgdx-loser.mp3
+sfx/logo/libgdx-mask-sound.mp3
+sfx/logo/libgdx-scream.mp3
+sfx/logo/libgdx-title.mp3
+sfx/logo/ray3k-tune.mp3
+sfx/logo/ray3k.mp3

@@ -1,0 +1,215 @@
+
+textures.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+knob
+  rotate: false
+  xy: 4, 156
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+logo
+  rotate: false
+  xy: 1, 129
+  size: 171, 17
+  orig: 171, 17
+  offset: 0, 0
+  index: -1
+scroll-pane
+  rotate: false
+  xy: 22, 156
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
+slider
+  rotate: false
+  xy: 40, 156
+  size: 100, 16
+  orig: 100, 16
+  offset: 0, 0
+  index: -1
+white
+  rotate: false
+  xy: 1, 171
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+window
+  rotate: false
+  xy: 142, 148
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+
+textures2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+logo/libgdx-b
+  rotate: true
+  xy: 1617, 1439
+  size: 39, 51
+  orig: 39, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-blood
+  rotate: true
+  xy: 1991, 1338
+  size: 148, 55
+  orig: 148, 55
+  offset: 0, 0
+  index: -1
+logo/libgdx-d
+  rotate: false
+  xy: 1982, 1285
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-face
+  rotate: true
+  xy: 70, 1414
+  size: 54, 59
+  orig: 54, 59
+  offset: 0, 0
+  index: -1
+logo/libgdx-g
+  rotate: false
+  xy: 1982, 1232
+  size: 64, 51
+  orig: 64, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-i
+  rotate: false
+  xy: 1589, 1548
+  size: 15, 51
+  orig: 15, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-l
+  rotate: false
+  xy: 1589, 1495
+  size: 15, 51
+  orig: 15, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-machete
+  rotate: false
+  xy: 1589, 1668
+  size: 24, 91
+  orig: 25, 91
+  offset: 0, 0
+  index: -1
+logo/libgdx-mask
+  rotate: true
+  xy: 1, 1420
+  size: 48, 67
+  orig: 49, 67
+  offset: 0, 0
+  index: -1
+logo/libgdx-splatter-1
+  rotate: false
+  xy: 1589, 1644
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+logo/libgdx-splatter-2
+  rotate: false
+  xy: 1589, 1601
+  size: 20, 20
+  orig: 20, 20
+  offset: 0, 0
+  index: -1
+logo/libgdx-splatter-3
+  rotate: false
+  xy: 1589, 1623
+  size: 23, 19
+  orig: 23, 19
+  offset: 0, 0
+  index: -1
+logo/libgdx-tears
+  rotate: false
+  xy: 1544, 1433
+  size: 71, 60
+  orig: 71, 60
+  offset: 0, 0
+  index: -1
+logo/libgdx-template
+  rotate: false
+  xy: 1621, 1995
+  size: 301, 51
+  orig: 301, 51
+  offset: 0, 0
+  index: -1
+logo/libgdx-x
+  rotate: false
+  xy: 1911, 1435
+  size: 78, 51
+  orig: 78, 51
+  offset: 0, 0
+  index: -1
+logo/ray3k-back
+  rotate: false
+  xy: 1027, 1508
+  size: 560, 251
+  orig: 560, 251
+  offset: 0, 0
+  index: -1
+logo/ray3k-bar
+  rotate: true
+  xy: 1924, 1488
+  size: 558, 115
+  orig: 558, 115
+  offset: 0, 0
+  index: -1
+logo/ray3k-border
+  rotate: false
+  xy: 1027, 1761
+  size: 592, 285
+  orig: 598, 291
+  offset: 3, 3
+  index: -1
+logo/ray3k-glow
+  rotate: true
+  xy: 1621, 1480
+  size: 513, 288
+  orig: 513, 288
+  offset: 0, 0
+  index: -1
+logo/ray3k-matrix
+  rotate: true
+  xy: 1544, 1284
+  size: 147, 436
+  orig: 156, 452
+  offset: 4, 12
+  index: -1
+logo/ray3k-template
+  rotate: false
+  xy: 1, 1470
+  size: 1024, 576
+  orig: 1024, 576
+  offset: 0, 0
+  index: -1
+logo/ray3k-text
+  rotate: false
+  xy: 1027, 1288
+  size: 515, 218
+  orig: 515, 218
+  offset: 0, 0
+  index: -1
+logo/white
+  rotate: false
+  xy: 2041, 2045
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
