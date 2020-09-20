@@ -1,0 +1,30 @@
+{
+"skeleton": {
+	"hash": "SPsEg0waUYnYWFCdM3HQJdVdfkI",
+	"spine": "3.8.99",
+	"y": -0.5,
+	"width": 16,
+	"height": 17,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/wall", "bone": "root", "attachment": "game/wall" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/wall": {
+				"game/wall": { "x": 8, "y": 8, "width": 16, "height": 17 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

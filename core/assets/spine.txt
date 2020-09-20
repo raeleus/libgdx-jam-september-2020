@@ -1,2 +1,5 @@
 spine/libgdx.json
+spine/monster.json
+spine/player.json
 spine/ray3k.json
+spine/wall.json

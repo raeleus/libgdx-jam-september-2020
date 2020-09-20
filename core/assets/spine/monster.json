@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "iHjgVy6Ss2R+6jV1FJofEbxb8zE",
+	"spine": "3.8.99",
+	"x": -8,
+	"y": -8.5,
+	"width": 16,
+	"height": 17,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/monster", "bone": "root", "attachment": "game/monster" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/monster": {
+				"game/monster": { "width": 16, "height": 17 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
