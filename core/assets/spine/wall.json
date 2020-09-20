@@ -1,25 +1,25 @@
 {
-"skeleton": {
-	"hash": "SPsEg0waUYnYWFCdM3HQJdVdfkI",
-	"spine": "3.8.99",
-	"y": -0.5,
-	"width": 16,
-	"height": 17,
-	"images": "",
-	"audio": ""
-},
+"skeleton": { "hash": "7Y7iY1XU6v91GbJurDV8qG4zVKY", "spine": "3.8.99", "width": 16, "height": 16, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/wall", "bone": "root", "attachment": "game/wall" }
+	{ "name": "game/wall", "bone": "root", "attachment": "game/wall" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ 0.03, 0, 0.03, 15.99, 16.1, 15.95, 16.02, -0.07 ]
+				}
+			},
 			"game/wall": {
-				"game/wall": { "x": 8, "y": 8, "width": 16, "height": 17 }
+				"game/wall": { "x": 8, "y": 8, "width": 16, "height": 16 }
 			}
 		}
 	}

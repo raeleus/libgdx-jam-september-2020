@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "0ky2iNr6AMQo/jVGbIEqrE/16L0",
+	"hash": "IxsBX1jcW/uM5pq8mKGJBZm6YzQ",
 	"spine": "3.8.99",
 	"x": -8,
 	"y": -8.5,
@@ -13,12 +13,21 @@
 	{ "name": "root" }
 ],
 "slots": [
-	{ "name": "game/player", "bone": "root", "attachment": "game/player" }
+	{ "name": "game/wall", "bone": "root" },
+	{ "name": "game/player", "bone": "root", "attachment": "game/player" },
+	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
+			"bbox": {
+				"bbox": {
+					"type": "boundingbox",
+					"vertexCount": 4,
+					"vertices": [ -8.02, -8.38, -8.02, 8.42, 8.1, 8.47, 8, -8.38 ]
+				}
+			},
 			"game/player": {
 				"game/player": { "width": 16, "height": 17 }
 			}

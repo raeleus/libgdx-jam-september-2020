@@ -24,7 +24,7 @@ public class GameScreen extends JamScreen {
     public static GameScreen gameScreen;
     public static final Color BG_COLOR = new Color(Color.WHITE);
     public Stage stage;
-    public ShapeDrawer shapeDrawer;
+    public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
     
@@ -76,18 +76,18 @@ public class GameScreen extends JamScreen {
                 switch (id) {
                     case 1:
                         var wallEntity = new WallEntity();
-                        entityController.add(wallEntity);
                         wallEntity.setPosition(x, y);
+                        entityController.add(wallEntity);
                         break;
                     case 3:
                         var playerEntity = new PlayerEntity();
-                        entityController.add(playerEntity);
                         playerEntity.setPosition(x, y);
+                        entityController.add(playerEntity);
                         break;
                     case 4:
                         var monsterEntity = new MonsterEntity();
-                        entityController.add(monsterEntity);
                         monsterEntity.setPosition(x, y);
+                        entityController.add(monsterEntity);
                         break;
                 }
             }
