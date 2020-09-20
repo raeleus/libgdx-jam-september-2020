@@ -30,9 +30,6 @@ public class GameScreen extends JamScreen {
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
-    public Viewport viewportRight;
-    public OrthographicCamera cameraRight;
-    public Array<PlayerEntity> players;
     
     public GameScreen() {
         gameScreen = this;
@@ -72,20 +69,20 @@ public class GameScreen extends JamScreen {
         
         camera = new OrthographicCamera();
         camera.zoom = .25f;
-        viewport = new FitViewport(512, 576, camera);
-        cameraRight = new OrthographicCamera();
-        viewportRight = new FitViewport(512, 576, cameraRight);
+        viewport = new FitViewport(1024, 576, camera);
         
         entityController.clear();
         
-        players = new Array<>();
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
-            int width;
+            int levelWidth;
+            int levelHeight;
+            
             @Override
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
-                this.width = width;
+                levelWidth = width;
+                levelHeight = height;
             }
     
             @Override
@@ -108,7 +105,13 @@ public class GameScreen extends JamScreen {
                         var playerEntity = new PlayerEntity();
                         playerEntity.setPosition(x, y);
                         entityController.add(playerEntity);
-                        players.add(playerEntity);
+    
+                        var cameraEntity = new CameraEntity(viewport, camera, playerEntity);
+                        cameraEntity.boundaryLeft = 0;
+                        cameraEntity.boundaryRight = levelWidth;
+                        cameraEntity.boundaryBottom = 0;
+                        cameraEntity.boundaryTop = levelHeight;
+                        entityController.add(cameraEntity);
                         break;
                     case "monster":
                         var monsterEntity = new MonsterEntity();
@@ -124,27 +127,6 @@ public class GameScreen extends JamScreen {
                 var path = folder + "/" + texture;
                 path = path.substring(0, path.length() - 4);
                 entityController.add(new DecalEntity(path, centerX, centerY));
-            }
-    
-            @Override
-            public void levelComplete() {
-                if (players.size > 0) {
-                    var playerLeft = players.first();
-                    var playerRight = players.peek();
-                    
-                    for (var player : players) {
-                        if (player.x < playerLeft.x) playerLeft = player;
-                        if (player.x > playerRight.x) playerRight = player;
-                    }
-                    
-                    var cameraEntity = new CameraEntity(viewport, camera, playerLeft);
-                    cameraEntity.boundaryRight = width / 2f;
-                    entityController.add(cameraEntity);
-    
-                    cameraEntity = new CameraEntity(viewportRight, cameraRight, playerRight);
-                    cameraEntity.boundaryLeft = width / 2f;
-                    entityController.add(cameraEntity);
-                }
             }
         });
         ogmoReader.readFile(Gdx.files.internal("levels/test2.json"));
@@ -174,12 +156,6 @@ public class GameScreen extends JamScreen {
         entityController.draw(paused ? 0 : delta);
         batch.end();
         
-        batch.begin();
-        viewportRight.apply();
-        batch.setProjectionMatrix(cameraRight.combined);
-        entityController.draw(paused ? 0 : delta);
-        batch.end();
-        
         vfxManager.endInputCapture();
         vfxManager.applyEffects();
         vfxManager.renderToScreen();
@@ -192,11 +168,7 @@ public class GameScreen extends JamScreen {
     public void resize(int width, int height) {
         if (width + height != 0) {
             vfxManager.resize(width, height);
-            viewport.update(width / 2, height);
-            viewport.setScreenBounds(0, 0, width / 2, height);
-            
-            viewportRight.update(width / 2, height);
-            viewportRight.setScreenBounds(width / 2, 0, width / 2, height);
+            viewport.update(width, height);
             
             stage.getViewport().update(width, height, true);
         }
