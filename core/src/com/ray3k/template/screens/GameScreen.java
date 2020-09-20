@@ -33,18 +33,19 @@ public class GameScreen extends JamScreen {
     public boolean paused;
     private ChainVfxEffect vfxEffect;
     
-    public GameScreen() {
+    @Override
+    public void show() {
         gameScreen = this;
     
         paused = false;
-        
+    
         stage = new Stage(new ScreenViewport(), batch);
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
                 if (!paused && keycode == Keys.ESCAPE) {
                     paused = true;
-                    
+                
                     DialogPause dialogPause = new DialogPause(GameScreen.this);
                     dialogPause.show(stage);
                     dialogPause.addListener(new PauseListener() {
@@ -52,7 +53,7 @@ public class GameScreen extends JamScreen {
                         public void resume() {
                             paused = false;
                         }
-    
+                    
                         @Override
                         public void quit() {
                             core.transition(new MenuScreen());
@@ -62,31 +63,31 @@ public class GameScreen extends JamScreen {
                 return super.keyDown(event, keycode);
             }
         });
-        
+    
         shapeDrawer = new ShapeDrawer(batch, skin.getRegion("white"));
         shapeDrawer.setPixelSize(.5f);
-        
+    
         InputMultiplexer inputMultiplexer = new InputMultiplexer(stage, this);
         Gdx.input.setInputProcessor(inputMultiplexer);
-        
+    
         camera = new OrthographicCamera();
         camera.zoom = .25f;
         viewport = new FitViewport(1024, 576, camera);
-        
+    
         entityController.clear();
-        
+    
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
             int levelWidth;
             int levelHeight;
-            
+        
             @Override
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
                 levelWidth = width;
                 levelHeight = height;
             }
-    
+        
             @Override
             public void grid(int col, int row, int x, int y, int width, int height, int id) {
                 switch (id) {
@@ -97,7 +98,7 @@ public class GameScreen extends JamScreen {
                         break;
                 }
             }
-    
+        
             @Override
             public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
@@ -107,7 +108,7 @@ public class GameScreen extends JamScreen {
                         var playerEntity = new PlayerEntity();
                         playerEntity.setPosition(x, y);
                         entityController.add(playerEntity);
-    
+                    
                         var cameraEntity = new CameraEntity(viewport, camera, playerEntity);
                         cameraEntity.boundaryLeft = 0;
                         cameraEntity.boundaryRight = levelWidth;
@@ -122,7 +123,7 @@ public class GameScreen extends JamScreen {
                         break;
                 }
             }
-    
+        
             @Override
             public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
                               String folder) {
@@ -142,7 +143,7 @@ public class GameScreen extends JamScreen {
         }
         stage.act(delta);
         if (isButtonJustPressed(Buttons.LEFT)) {
-            core.transition(new MenuScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+            core.transition(new GameScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
         }
     }
     
