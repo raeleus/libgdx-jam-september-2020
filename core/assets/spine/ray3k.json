@@ -1,9 +1,9 @@
 {
 "skeleton": {
-	"hash": "ARpr9SgcjuWHTDy56BRsij4JMuI",
+	"hash": "pC8TFZbGykJDYvrKx7LO4721OcM",
 	"spine": "3.8.99",
-	"x": -1,
-	"width": 1026,
+	"x": 0.01,
+	"width": 1024.03,
 	"height": 576,
 	"images": "",
 	"audio": ""
@@ -26,6 +26,7 @@
 	{ "name": "logo/ray3k-matrix10", "parent": "root", "length": 332.92, "rotation": -67.13, "x": 510.8, "y": 281.69 }
 ],
 "slots": [
+	{ "name": "clip", "bone": "root", "attachment": "clip" },
 	{ "name": "logo/white", "bone": "root", "attachment": "logo/white" },
 	{ "name": "logo/ray3k-matrix", "bone": "logo/ray3k-matrix" },
 	{ "name": "logo/ray3k-matrix7", "bone": "logo/ray3k-matrix7" },
@@ -47,6 +48,15 @@
 	{
 		"name": "default",
 		"attachments": {
+			"clip": {
+				"clip": {
+					"type": "clipping",
+					"end": "clip",
+					"vertexCount": 4,
+					"vertices": [ 0.02, -0.01, 0.01, 575.97, 1023.95, 576, 1024.04, 0.02 ],
+					"color": "ce3a3aff"
+				}
+			},
 			"logo/ray3k-back": {
 				"logo/ray3k-back": { "x": 12.65, "y": 5.71, "rotation": -0.16, "width": 560, "height": 251 }
 			},

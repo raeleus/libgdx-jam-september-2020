@@ -1,5 +1,5 @@
 {
-"skeleton": { "hash": "Hz65PrW0q+4BMbDZ7xJ52KEk8zA", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
+"skeleton": { "hash": "3UNtFA7nModc//k+8DQRsOsBh20", "spine": "3.8.99", "width": 1024, "height": 576, "images": "", "audio": "" },
 "bones": [
 	{ "name": "root" },
 	{ "name": "logo/libgdx-l", "parent": "root", "length": 28.45, "rotation": 88.91, "x": 368.8, "y": 265.35 },
@@ -14,6 +14,7 @@
 	{ "name": "logo/libgdx-splatter", "parent": "root", "length": 56.33, "rotation": 0.76, "x": 551.68, "y": 368.02 }
 ],
 "slots": [
+	{ "name": "clip", "bone": "root", "attachment": "clip" },
 	{ "name": "logo/white", "bone": "root", "attachment": "logo/white" },
 	{ "name": "logo/libgdx-blood", "bone": "logo/libgdx-blood", "dark": "000000", "attachment": "logo/libgdx-blood" },
 	{ "name": "logo/libgdx-l", "bone": "logo/libgdx-l", "attachment": "logo/libgdx-l" },
@@ -31,6 +32,15 @@
 	{
 		"name": "default",
 		"attachments": {
+			"clip": {
+				"clip": {
+					"type": "clipping",
+					"end": "clip",
+					"vertexCount": 4,
+					"vertices": [ 0.02, -0.02, -0.01, 576.06, 1024.05, 575.97, 1024, 0.02 ],
+					"color": "ce3a3aff"
+				}
+			},
 			"logo/libgdx-b": {
 				"logo/libgdx-b": { "x": 24.95, "y": -4.92, "rotation": -90.63, "width": 39, "height": 51 }
 			},
