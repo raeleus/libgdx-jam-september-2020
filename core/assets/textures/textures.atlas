@@ -48,6 +48,33 @@ window
   index: -1
 
 textures2.png
+size: 64,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+game/monster
+  rotate: false
+  xy: 1, 36
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+game/player
+  rotate: false
+  xy: 19, 36
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+game/wall
+  rotate: false
+  xy: 37, 36
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+
+textures3.png
 size: 2048,2048
 format: RGBA8888
 filter: Linear,Linear
