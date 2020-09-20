@@ -2,8 +2,6 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.dongbat.jbump.CollisionFilter;
-import com.ray3k.template.*;
-import com.ray3k.template.screens.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
