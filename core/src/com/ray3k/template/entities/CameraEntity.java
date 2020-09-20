@@ -29,8 +29,8 @@ public class CameraEntity extends Entity {
     @Override
     public void act(float delta) {
         setPosition(player.x, player.y);
-        x = Math.min(x, boundaryRight - viewport.getScreenWidth() / 2f);
-        x = Math.max(x, boundaryLeft + viewport.getScreenWidth() / 2f);
+        x = Math.min(x, boundaryRight - viewport.getScreenWidth() / 2f * camera.zoom);
+        x = Math.max(x, boundaryLeft + viewport.getScreenWidth() / 2f * camera.zoom);
         camera.position.set(x, y, 0);
     }
     

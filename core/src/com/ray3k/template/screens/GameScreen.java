@@ -71,6 +71,7 @@ public class GameScreen extends JamScreen {
         Gdx.input.setInputProcessor(inputMultiplexer);
         
         camera = new OrthographicCamera();
+        camera.zoom = .25f;
         viewport = new FitViewport(512, 576, camera);
         cameraRight = new OrthographicCamera();
         viewportRight = new FitViewport(512, 576, cameraRight);
