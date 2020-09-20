@@ -11,6 +11,7 @@ import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
@@ -27,6 +28,7 @@ public class GameScreen extends JamScreen {
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
+    public Viewport viewport2;
     
     public GameScreen() {
         gameScreen = this;
@@ -65,7 +67,10 @@ public class GameScreen extends JamScreen {
         Gdx.input.setInputProcessor(inputMultiplexer);
         
         camera = new OrthographicCamera();
-        viewport = new FitViewport(1024, 576, camera);
+        viewport = new FitViewport(512, 576, camera);
+        viewport2 = new FitViewport(512, 576, camera);
+        
+        camera.position.set(512, 288, 0);
         
         entityController.clear();
         
@@ -112,11 +117,19 @@ public class GameScreen extends JamScreen {
         vfxManager.beginInputCapture();
         Gdx.gl.glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        
         batch.begin();
         viewport.apply();
         batch.setProjectionMatrix(camera.combined);
         entityController.draw(paused ? 0 : delta);
         batch.end();
+        
+        batch.begin();
+        viewport2.apply();
+        batch.setProjectionMatrix(camera.combined);
+        entityController.draw(paused ? 0 : delta);
+        batch.end();
+        
         vfxManager.endInputCapture();
         vfxManager.applyEffects();
         vfxManager.renderToScreen();
@@ -129,8 +142,12 @@ public class GameScreen extends JamScreen {
     public void resize(int width, int height) {
         if (width + height != 0) {
             vfxManager.resize(width, height);
-            viewport.update(width, height);
-        
+            viewport.update(width / 2, height);
+            viewport.setScreenBounds(0, 0, width / 2, height);
+            
+            viewport2.update(width / 2, height);
+            viewport2.setScreenBounds(width / 2, 0, width / 2, height);
+            
             stage.getViewport().update(width, height, true);
         }
     }
