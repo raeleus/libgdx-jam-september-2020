@@ -1,11 +1,13 @@
 package com.ray3k.template.screens;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -13,12 +15,12 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectMap;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
+import com.ray3k.template.transitions.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
@@ -139,6 +141,9 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
+        if (isButtonJustPressed(Buttons.LEFT)) {
+            core.transition(new MenuScreen(), new TransitionSquish(Interpolation.fastSlow), 1f);
+        }
     }
     
     @Override

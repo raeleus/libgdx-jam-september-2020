@@ -61,7 +61,7 @@ public class EntityController implements Disposable {
                 entity.skeletonBounds.update(entity.skeleton, true);
             }
             
-            if (entity.item != null) {
+            if (entity.item != null && world.hasItem(entity.item)) {
                 world.move(entity.item, entity.x + entity.bboxX, entity.y + entity.bboxY, entity.collisionFilter);
                 Rect rect = world.getRect(entity.item);
                 entity.x = rect.x - entity.bboxX;
@@ -101,7 +101,7 @@ public class EntityController implements Disposable {
     @Override
     public void dispose() {
         for (Entity entity : entities) {
-            if (entity.item != null) world.remove(entity.item);
+            if (entity.item != null && world.hasItem(entity.item)) world.remove(entity.item);
             if (entity instanceof Disposable) ((Disposable) entity).dispose();
         }
     }

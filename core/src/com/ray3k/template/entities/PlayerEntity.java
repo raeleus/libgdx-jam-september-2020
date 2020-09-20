@@ -48,10 +48,12 @@ public class PlayerEntity extends Entity {
     @Override
     public void draw(float delta) {
         var rect = world.getRect(item);
-        DEBUG_COLOR.set(Color.GREEN);
-        DEBUG_COLOR.a = .25f;
-        shapeDrawer.setColor(DEBUG_COLOR);
-        shapeDrawer.filledRectangle(rect.x, rect.y, rect.w, rect.h);
+        if (rect != null) {
+            DEBUG_COLOR.set(Color.GREEN);
+            DEBUG_COLOR.a = .25f;
+            shapeDrawer.setColor(DEBUG_COLOR);
+            shapeDrawer.filledRectangle(rect.x, rect.y, rect.w, rect.h);
+        }
     }
     
     @Override
