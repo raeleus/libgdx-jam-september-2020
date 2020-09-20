@@ -49,7 +49,7 @@ public class LibgdxScreen extends JamScreen {
         stage.addActor(root);
     
         Image image = new Image(spineDrawable);
-        image.setScaling(Scaling.fit);
+        image.setScaling(Scaling.fill);
         root.add(image).grow();
         spineDrawable.getAnimationState().setAnimation(0, animation, false);
     
