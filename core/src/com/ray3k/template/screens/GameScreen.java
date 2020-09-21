@@ -106,7 +106,7 @@ public class GameScreen extends JamScreen {
                 switch (name) {
                     case "player":
                         var playerEntity = new PlayerEntity();
-                        playerEntity.setPosition(x, y);
+                        playerEntity.setPosition(x + 8, y - 8);
                         entityController.add(playerEntity);
                     
                         var cameraEntity = new CameraEntity(viewport, camera, playerEntity);
@@ -118,8 +118,13 @@ public class GameScreen extends JamScreen {
                         break;
                     case "monster":
                         var monsterEntity = new MonsterEntity();
-                        monsterEntity.setPosition(x, y);
+                        monsterEntity.setPosition(x + 8, y - 8);
                         entityController.add(monsterEntity);
+                        break;
+                    case "obstacle":
+                        var obstacleEntity = new ObstacleEntity();
+                        obstacleEntity.setPosition(x, y - 16);
+                        entityController.add(obstacleEntity);
                         break;
                 }
             }
