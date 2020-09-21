@@ -61,28 +61,42 @@ filter: Nearest,Nearest
 repeat: none
 game/map-test
   rotate: false
-  xy: 1, 19
+  xy: 1, 1
   size: 960, 960
   orig: 960, 960
   offset: 0, 0
   index: -1
 game/monster
   rotate: false
-  xy: 1, 1
+  xy: 38, 963
   size: 16, 16
   orig: 16, 17
   offset: 0, 0
   index: -1
+game/obstacle
+  rotate: false
+  xy: 56, 963
+  size: 16, 16
+  orig: 16, 16
+  offset: 0, 0
+  index: -1
 game/player
   rotate: true
-  xy: 37, 8
+  xy: 1, 970
   size: 9, 17
   orig: 16, 17
   offset: 4, 0
   index: -1
+game/telepad
+  rotate: false
+  xy: 20, 965
+  size: 16, 14
+  orig: 16, 16
+  offset: 0, 1
+  index: -1
 game/wall
   rotate: false
-  xy: 19, 1
+  xy: 74, 963
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

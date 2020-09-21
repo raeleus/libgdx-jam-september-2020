@@ -20,6 +20,10 @@ public class Resources {
 
     public static AnimationStateData spine_monsterAnimationData;
 
+    public static SkeletonData spine_obstacle;
+
+    public static AnimationStateData spine_obstacleAnimationData;
+
     public static SkeletonData spine_player;
 
     public static AnimationStateData spine_playerAnimationData;
@@ -65,6 +69,9 @@ public class Resources {
         spine_monster = assetManager.get("spine/monster.json");
         spine_monsterAnimationData = assetManager.get("spine/monster.json-animation");
         MonsterAnimation.animation = spine_monster.findAnimation("animation");
+        spine_obstacle = assetManager.get("spine/obstacle.json");
+        spine_obstacleAnimationData = assetManager.get("spine/obstacle.json-animation");
+        ObstacleAnimation.animation = spine_obstacle.findAnimation("animation");
         spine_player = assetManager.get("spine/player.json");
         spine_playerAnimationData = assetManager.get("spine/player.json-animation");
         PlayerAnimation.animation = spine_player.findAnimation("animation");
@@ -96,6 +103,10 @@ public class Resources {
     }
 
     public static class MonsterAnimation {
+        public static Animation animation;
+    }
+
+    public static class ObstacleAnimation {
         public static Animation animation;
     }
 

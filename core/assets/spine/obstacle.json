@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "wMNXUro9LWG47RgMwLbNdZJZiX4", "spine": "3.8.99", "width": 16, "height": 16, "images": "", "audio": "" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/obstacle", "bone": "root", "attachment": "game/obstacle" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/obstacle": {
+				"game/obstacle": { "x": 8, "y": 8, "width": 16, "height": 16 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}
