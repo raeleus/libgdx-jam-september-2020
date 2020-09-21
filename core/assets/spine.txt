@@ -3,4 +3,5 @@ spine/monster.json
 spine/obstacle.json
 spine/player.json
 spine/ray3k.json
+spine/telepad.json
 spine/wall.json

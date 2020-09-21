@@ -1,0 +1,31 @@
+{
+"skeleton": {
+	"hash": "bWtp1ZzM1TBFsHtCSc4fE/zpFtw",
+	"spine": "3.8.99",
+	"x": -8,
+	"y": -8,
+	"width": 16,
+	"height": 16,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/telepad", "bone": "root", "attachment": "game/telepad" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/telepad": {
+				"game/telepad": { "width": 16, "height": 16 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

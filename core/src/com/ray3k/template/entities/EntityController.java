@@ -1,6 +1,5 @@
 package com.ray3k.template.entities;
 
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.Disposable;
 import com.dongbat.jbump.Rect;
@@ -42,7 +41,7 @@ public class EntityController implements Disposable {
         sortedEntities.sort(depthComparator);
         
         for (Entity entity : sortedEntities) {
-            entity.collisionResult = null;
+            if (entity.collisions != null) entity.collisions.clear();
             entity.actBefore(delta);
         }
         
@@ -63,7 +62,11 @@ public class EntityController implements Disposable {
             }
             
             if (entity.item != null && world.hasItem(entity.item)) {
-                entity.collisionResult = world.move(entity.item, entity.x + entity.bboxX, entity.y + entity.bboxY, entity.collisionFilter);
+                var result = world.move(entity.item, entity.x + entity.bboxX, entity.y + entity.bboxY, entity.collisionFilter);
+                for (int i = 0; i < result.projectedCollisions.size(); i++) {
+                    var collision = result.projectedCollisions.get(i);
+                    entity.collisions.add(collision);
+                }
                 Rect rect = world.getRect(entity.item);
                 entity.x = rect.x - entity.bboxX;
                 entity.y = rect.y - entity.bboxY;
@@ -74,8 +77,8 @@ public class EntityController implements Disposable {
         
         //call collision methods
         for (var entity : sortedEntities) {
-            if (entity.collisionResult != null) {
-                entity.collisions(entity.collisionResult);
+            if (entity.collisions != null && entity.collisions.size() > 0) {
+                entity.collision(entity.collisions);
             }
         }
     

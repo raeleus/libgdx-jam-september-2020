@@ -3,20 +3,22 @@ package com.ray3k.template.entities;
 import com.badlogic.gdx.graphics.Color;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
+import com.ray3k.template.collisions.*;
 
 import static com.dongbat.jbump.CollisionFilter.defaultFilter;
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
+import static com.ray3k.template.collisions.NullCollisionFilter.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
-public class ObstacleEntity extends Entity {
+public class TelepadEntity extends Entity {
     public static final Color DEBUG_COLOR = new Color();
     
     @Override
     public void create() {
-        setSkeletonData(spine_obstacle, spine_obstacleAnimationData);
+        setSkeletonData(spine_telepad, spine_telepadAnimationData);
     
-        setCollisionBox(0, 0, 16, 16, defaultFilter);
+        setCollisionBox(-8, -8, 16, 16, nullCollisionFilter);
     }
     
     @Override

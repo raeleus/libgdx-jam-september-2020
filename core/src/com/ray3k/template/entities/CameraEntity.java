@@ -2,6 +2,7 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 
 public class CameraEntity extends Entity {
@@ -50,7 +51,7 @@ public class CameraEntity extends Entity {
     }
     
     @Override
-    public void collisions(Result collisionResult) {
+    public void collision(Collisions collisions) {
     
     }
 }

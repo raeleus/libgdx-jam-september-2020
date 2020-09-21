@@ -1,8 +1,12 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.Interpolation;
+import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
+import com.ray3k.template.screens.*;
+import com.ray3k.template.transitions.*;
 
 import static com.ray3k.template.Core.Binding.*;
 import static com.ray3k.template.Core.*;
@@ -63,11 +67,13 @@ public class PlayerEntity extends Entity {
     }
     
     @Override
-    public void collisions(Result collisionResult) {
-        for (int i = 0; i < collisionResult.projectedCollisions.size(); i++) {
-            var collision = collisionResult.projectedCollisions.get(i);
+    public void collision(Collisions collisions) {
+        for (int i = 0; i < collisions.size(); i++) {
+            var collision = collisions.get(i);
             if (collision.other.userData instanceof MonsterEntity) {
                 destroy = true;
+            } else if (collision.other.userData instanceof TelepadEntity) {
+                core.transition(new GameScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
             }
         }
     }

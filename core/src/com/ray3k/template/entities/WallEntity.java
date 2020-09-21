@@ -2,6 +2,7 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.dongbat.jbump.CollisionFilter;
+import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 
 import static com.ray3k.template.Core.*;
@@ -43,7 +44,7 @@ public class WallEntity extends Entity {
     }
     
     @Override
-    public void collisions(Result collisionResult) {
+    public void collision(Collisions collisions) {
     
     }
 }
