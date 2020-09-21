@@ -1,31 +1,104 @@
 {
 "skeleton": {
-	"hash": "iHjgVy6Ss2R+6jV1FJofEbxb8zE",
+	"hash": "FJHxS1B+ljl0LWindMtqIHDn2bg",
 	"spine": "3.8.99",
 	"x": -8,
-	"y": -8.5,
+	"y": -8,
 	"width": 16,
-	"height": 17,
+	"height": 16,
 	"images": "",
 	"audio": ""
 },
 "bones": [
-	{ "name": "root" }
+	{ "name": "root" },
+	{ "name": "animation", "parent": "root", "length": 38.67, "rotation": -0.53, "x": -0.08 }
 ],
 "slots": [
-	{ "name": "game/monster", "bone": "root", "attachment": "game/monster" }
+	{ "name": "animation", "bone": "animation", "attachment": "game/cow (1)" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
-			"game/monster": {
-				"game/monster": { "width": 16, "height": 17 }
+			"animation": {
+				"game/cow (1)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (2)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (3)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (4)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (5)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (6)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (7)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (8)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (9)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (10)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (11)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (12)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (13)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (14)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 },
+				"game/cow (15)": { "x": 0.08, "rotation": 0.53, "width": 16, "height": 16 }
 			}
 		}
 	}
 ],
 "animations": {
-	"animation": {}
+	"down": {
+		"slots": {
+			"animation": {
+				"attachment": [
+					{ "time": 0.1, "name": "game/cow (2)" },
+					{ "time": 0.2, "name": "game/cow (3)" },
+					{ "time": 0.3, "name": "game/cow (4)" },
+					{ "time": 0.4, "name": "game/cow (5)" }
+				]
+			}
+		}
+	},
+	"left": {
+		"slots": {
+			"animation": {
+				"attachment": [
+					{ "name": "game/cow (6)" },
+					{ "time": 0.1, "name": "game/cow (7)" },
+					{ "time": 0.2, "name": "game/cow (8)" },
+					{ "time": 0.3, "name": "game/cow (9)" },
+					{ "time": 0.4, "name": "game/cow (10)" }
+				]
+			}
+		},
+		"bones": {
+			"animation": {
+				"scale": [
+					{ "x": -1 }
+				]
+			}
+		}
+	},
+	"right": {
+		"slots": {
+			"animation": {
+				"attachment": [
+					{ "name": "game/cow (6)" },
+					{ "time": 0.1, "name": "game/cow (7)" },
+					{ "time": 0.2, "name": "game/cow (8)" },
+					{ "time": 0.3, "name": "game/cow (9)" },
+					{ "time": 0.4, "name": "game/cow (10)" }
+				]
+			}
+		}
+	},
+	"stand": {},
+	"up": {
+		"slots": {
+			"animation": {
+				"attachment": [
+					{ "name": "game/cow (11)" },
+					{ "time": 0.1, "name": "game/cow (12)" },
+					{ "time": 0.2, "name": "game/cow (13)" },
+					{ "time": 0.3, "name": "game/cow (14)" },
+					{ "time": 0.4, "name": "game/cow (15)" }
+				]
+			}
+		}
+	}
 }
 }
