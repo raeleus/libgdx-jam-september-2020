@@ -68,7 +68,11 @@ public class Resources {
         LibgdxAnimation.stand = spine_libgdx.findAnimation("stand");
         spine_monster = assetManager.get("spine/monster.json");
         spine_monsterAnimationData = assetManager.get("spine/monster.json-animation");
-        MonsterAnimation.animation = spine_monster.findAnimation("animation");
+        MonsterAnimation.down = spine_monster.findAnimation("down");
+        MonsterAnimation.left = spine_monster.findAnimation("left");
+        MonsterAnimation.right = spine_monster.findAnimation("right");
+        MonsterAnimation.stand = spine_monster.findAnimation("stand");
+        MonsterAnimation.up = spine_monster.findAnimation("up");
         spine_obstacle = assetManager.get("spine/obstacle.json");
         spine_obstacleAnimationData = assetManager.get("spine/obstacle.json-animation");
         ObstacleAnimation.animation = spine_obstacle.findAnimation("animation");
@@ -103,7 +107,15 @@ public class Resources {
     }
 
     public static class MonsterAnimation {
-        public static Animation animation;
+        public static Animation down;
+
+        public static Animation left;
+
+        public static Animation right;
+
+        public static Animation stand;
+
+        public static Animation up;
     }
 
     public static class ObstacleAnimation {
