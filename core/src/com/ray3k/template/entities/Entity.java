@@ -3,6 +3,7 @@ package com.ray3k.template.entities;
 import com.badlogic.gdx.math.Vector2;
 import com.dongbat.jbump.CollisionFilter;
 import com.dongbat.jbump.Item;
+import com.dongbat.jbump.Response.Result;
 import com.esotericsoftware.spine.*;
 import com.ray3k.template.*;
 
@@ -15,6 +16,7 @@ public abstract class Entity {
     public AnimationState animationState;
     public SkeletonBounds skeletonBounds;
     public Item<Entity> item;
+    public Result collisionResult;
     public CollisionFilter collisionFilter;
     public float x;
     public float y;
@@ -35,6 +37,7 @@ public abstract class Entity {
     public abstract void act(float delta);
     public abstract void draw(float delta);
     public abstract void destroy();
+    public abstract void collisions(Result collisionResult);
     
     public Entity() {
         visible = true;

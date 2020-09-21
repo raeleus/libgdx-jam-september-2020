@@ -1,12 +1,13 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
-import com.dongbat.jbump.CollisionFilter;
+import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
 
-import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Core.Binding.*;
+import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
+import static com.ray3k.template.collisions.PlayerCollisionFilter.*;
 import static com.ray3k.template.screens.GameScreen.*;
 
 public class PlayerEntity extends Entity {
@@ -17,7 +18,7 @@ public class PlayerEntity extends Entity {
     public void create() {
         setSkeletonData(spine_player, spine_playerAnimationData);
         
-        setCollisionBox(-8, -8, 16, 16, CollisionFilter.defaultFilter);
+        setCollisionBox(-8, -8, 16, 16, playerCollisionFilter);
     }
     
     @Override
@@ -59,5 +60,15 @@ public class PlayerEntity extends Entity {
     @Override
     public void destroy() {
     
+    }
+    
+    @Override
+    public void collisions(Result collisionResult) {
+        for (int i = 0; i < collisionResult.projectedCollisions.size(); i++) {
+            var collision = collisionResult.projectedCollisions.get(i);
+            if (collision.other.userData instanceof MonsterEntity) {
+                destroy = true;
+            }
+        }
     }
 }
