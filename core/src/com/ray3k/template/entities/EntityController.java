@@ -42,6 +42,7 @@ public class EntityController implements Disposable {
         sortedEntities.sort(depthComparator);
         
         for (Entity entity : sortedEntities) {
+            entity.collisionResult = null;
             entity.actBefore(delta);
         }
         
@@ -62,13 +63,20 @@ public class EntityController implements Disposable {
             }
             
             if (entity.item != null && world.hasItem(entity.item)) {
-                world.move(entity.item, entity.x + entity.bboxX, entity.y + entity.bboxY, entity.collisionFilter);
+                entity.collisionResult = world.move(entity.item, entity.x + entity.bboxX, entity.y + entity.bboxY, entity.collisionFilter);
                 Rect rect = world.getRect(entity.item);
                 entity.x = rect.x - entity.bboxX;
                 entity.y = rect.y - entity.bboxY;
             }
             
             entity.act(delta);
+        }
+        
+        //call collision methods
+        for (var entity : sortedEntities) {
+            if (entity.collisionResult != null) {
+                entity.collisions(entity.collisionResult);
+            }
         }
     
         //call destroy methods and remove the entities
