@@ -10,10 +10,8 @@ public class MonsterCollisionFilter implements CollisionFilter {
     
     @Override
     public Response filter(Item item, Item other) {
-        if (other.userData instanceof PlayerEntity) {
-            return Response.cross;
-        } else {
-            return Response.slide;
-        }
+        if (other.userData instanceof PlayerEntity) return Response.cross;
+        else if (other.userData instanceof WallEntity) return Response.slide;
+        else return null;
     }
 }

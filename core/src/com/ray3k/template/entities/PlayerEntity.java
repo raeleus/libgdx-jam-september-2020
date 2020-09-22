@@ -49,6 +49,13 @@ public class PlayerEntity extends Entity {
         } else {
             setSpeed(0);
         }
+        
+        //attack
+        if (gameScreen.isBindingJustPressed(ATTACK)) {
+            var attack = new AttackEntity();
+            entityController.add(attack);
+            attack.setPosition(x, y);
+        }
     }
     
     @Override

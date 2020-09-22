@@ -12,8 +12,8 @@ public class PlayerCollisionFilter implements CollisionFilter {
     public Response filter(Item item, Item other) {
         if (other.userData instanceof MonsterEntity || other.userData instanceof TelepadEntity) {
             return Response.cross;
-        } else {
+        } else if (other.userData instanceof WallEntity) {
             return Response.slide;
-        }
+        } else return null;
     }
 }
