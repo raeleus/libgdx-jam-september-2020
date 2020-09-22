@@ -49,6 +49,12 @@ public class MonsterEntity extends Entity {
     
     @Override
     public void collision(Collisions collisions) {
-    
+        for (int i = 0; i < collisions.size(); i++) {
+            var collision = collisions.get(i);
+            if (collision.other.userData instanceof WallEntity) {
+                if (collision.normal.x != 0) deltaX = collision.normal.x * Math.abs(deltaX);
+                if (collision.normal.y != 0) deltaY = collision.normal.y * Math.abs(deltaY);
+            }
+        }
     }
 }
