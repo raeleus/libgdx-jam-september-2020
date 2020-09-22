@@ -52,8 +52,21 @@ public class MonsterEntity extends Entity {
         for (int i = 0; i < collisions.size(); i++) {
             var collision = collisions.get(i);
             if (collision.other.userData instanceof WallEntity) {
-                if (collision.normal.x != 0) deltaX = collision.normal.x * Math.abs(deltaX);
-                if (collision.normal.y != 0) deltaY = collision.normal.y * Math.abs(deltaY);
+                if (collision.normal.x == -1) {
+                    animationState.setAnimation(0, left, true);
+                    deltaX = collision.normal.x * Math.abs(deltaX);
+                } else if (collision.normal.x == 1) {
+                    animationState.setAnimation(0, right, true);
+                    deltaX = collision.normal.x * Math.abs(deltaX);
+                }
+    
+                if (collision.normal.y == -1) {
+                    animationState.setAnimation(0, down, true);
+                    deltaY = collision.normal.y * Math.abs(deltaY);
+                } else if (collision.normal.y == 1) {
+                    animationState.setAnimation(0, up, true);
+                    deltaY = collision.normal.y * Math.abs(deltaY);
+                }
             }
         }
     }

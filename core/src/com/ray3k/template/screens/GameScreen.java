@@ -18,6 +18,7 @@ import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.crashinvaders.vfx.effects.ChainVfxEffect;
 import com.ray3k.template.*;
 import com.ray3k.template.OgmoReader.*;
+import com.ray3k.template.Resources.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
 import com.ray3k.template.transitions.*;
@@ -128,15 +129,19 @@ public class GameScreen extends JamScreen {
                         switch (valuesMap.get("movement").asString()) {
                             case "east":
                                 monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 0);
+                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.right, true);
                                 break;
                             case "west":
                                 monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 180);
+                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.left, true);
                                 break;
                             case "north":
                                 monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 90);
+                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.up, true);
                                 break;
                             case "south":
                                 monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 270);
+                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.down, true);
                                 break;
                         }
                         break;
