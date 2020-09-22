@@ -183,9 +183,6 @@ public class GameScreen extends JamScreen {
             vfxManager.update(delta);
         }
         stage.act(delta);
-        if (isButtonJustPressed(Buttons.LEFT)) {
-            core.transition(new GameScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
-        }
     }
     
     @Override
