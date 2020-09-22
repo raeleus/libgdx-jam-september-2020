@@ -1,5 +1,5 @@
 {
-  "name": "New Project",
+  "name": "libGDX Jam September 2020",
   "ogmoVersion": "3.3.0",
   "levelPaths": ["."],
   "backgroundColor": "#282c34ff",
@@ -118,9 +118,16 @@
       "nodeDisplay": 0,
       "nodeGhost": true,
       "tags": [],
-      "values": [],
-      "texture": "game/monster.png",
-      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAACXBIWXMAAAsSAAALEgHS3X78AAABW0lEQVQ4jaVUMVLDMBBcM/TRB5j4ARSqadAT0qcgT0hNk3S0fgAzuKCk8A9ISYd/QH4Q/WCZlU62YyYFE2kuo9xp93R3O65I4pp1cxUawO1/AVVV1QA2AAKABirhktklZ2cHoIUDsYUcsm0JRHPIDpYhwoMJoExAn4ARxD75utI/l4AKaDcG6u2//N782ocEPg4vM5YWrV0gGD5Bd/p7TmR1IvCl7LHWMBLERQZqH5dg+2SRXHs77dk4BT922kU79EB4B+J9CaTf7mwsQwml5h8QO3D5sKT3Pjf27az+w/QFWnW6VMALsGkaPq/X1HpZregUPw0EnBPsh/p3YAD4EQIjwK+6Tm2SD98guksEm5FA2TixDqC7s3iefz8nCGnumrNKeMwZU1bZIwhNRD3KogpnBMaSladSpIdXA2nuerZemNW6mst++hQNSdqWlIusi7TlT8qb23XfAwC/v/BW0zZY1tIAAAAASUVORK5CYII="
+      "values": [
+        {
+          "name": "movement",
+          "definition": "Enum",
+          "choices": ["stationary", "east", "west", "north", "south"],
+          "defaults": 0
+        }
+      ],
+      "texture": "game/cow (1).png",
+      "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABc2lDQ1BpY2MAAHhedZE7S8NQGIYfW6Ve6VAHEYcOVRwURME6ah26FClVwduSxl6EJg1JihRXwcWh4CC6eBv8B7oKrgqCoAgiDv4Cb4tI/I4R6qAnnJyH97vky3sgkCrphtM4BIbp2plkIjo3vxANPdFCmAhx4pruWBPpdIp/1/sNDSp4Pah6/Z/3Z6RtOefo0NAs0VHdsl3hceHUqmsp3hTu1IvasvC+8IAtAwpfKD3r86Pigs+viu2ZzCQEVM9o4Rdnf7FetA3J6ZecmFGqyAzfS/1Je86cnZazW3YPDhmSJIiSpcIKJVwG5TTFs7/rxE2pm6IsNbq8LarYUlGgKLUDolaka07OvOg5eUpUle/+CHU/nfzIsD9VewKaHjzvpRdCW/BZ87yPA8/7PITgPZyZ9fqy+DT2JnqtrsX2ILwOJ+d1LbsNpxvQdWdptvb9naDsQD4Pz8fQMQ+RK2hd9L36iXN0CzNrckWXsLMLfZIfXvoCVFVoMel0oGEAAAAJcEhZcwAAD2EAAA9hAag/p2kAAAD0SURBVDhPY2RAA/YmvP/RxWD8g2c+M6LLscAEkDWmpXrjMGMr3HCYYWATQZonTGoFa7p2+RiYfv70M4OkNC8Ge9bsrQwgtQV51QwgQ5hgmp89f8MAwiAAUrR52yG4K0BskBgMgNSBDAHpZYIJdrX3M4AwMQBZHdwLIOeATPT1sgObAXM+zECQl0AA5BqYWrAXQILIoQvSiK4ZZiBMM7IeeCwgOx3Zv8jikNjZ+h/ZQqwG4I5GzBCCByK2wNPStWIAYXwApwHIGvEZgtcFxEQpPG2DohDZ7+gBiS4HC0i8LgApwpaBkF1GXS+g+xlmO7YsDpMDADhud29dhImhAAAAAElFTkSuQmCC"
     },
     {
       "exportID": "64494766",
@@ -194,7 +201,14 @@
       "nodeDisplay": 0,
       "nodeGhost": true,
       "tags": [],
-      "values": [],
+      "values": [
+        {
+          "name": "load-level",
+          "definition": "Enum",
+          "choices": ["test2", "test3"],
+          "defaults": 0
+        }
+      ],
       "texture": "game/telepad.png",
       "textureImage": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABC0lEQVQ4jcWSPU7EMBSEPxAH8BF8hEgcILR0SbH1JgdAyhFyA2oq9zReGigo0mwBElK4gekokxsYvc0PlpNNuyNZlu03o/G8x8VxtWFAP0HyC4kcPqF/gwPws2l6B8UR2g68j1YDXt7PcdUzNDEpXiJ8C9mC/QJtXGzB1+BNdP8KbmE7LGiFWBTeOecF1hjfKDW/iwvgbhaIrVdZ5mOISJjLJHC9Fka635/2sizJ83wISGu+V2pv1gT6vh+E0hSt9Xw3eT4M27/eA1ThF2qlvLX29AnJwRjjbZBBDWbRwg9woYgb+96MoUUdUAvbO0i+oNuaAWk142SegwzT4zt04mCaPiHeQ7VFvBCAPxJb2OYWBxAWAAAAAElFTkSuQmCC"
     }
