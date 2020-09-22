@@ -2,10 +2,8 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.dongbat.jbump.Collisions;
-import com.dongbat.jbump.Response.Result;
-import com.ray3k.template.collisions.*;
+import com.ray3k.template.*;
 
-import static com.dongbat.jbump.CollisionFilter.defaultFilter;
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
 import static com.ray3k.template.collisions.NullCollisionFilter.*;
@@ -13,6 +11,8 @@ import static com.ray3k.template.screens.GameScreen.*;
 
 public class TelepadEntity extends Entity {
     public static final Color DEBUG_COLOR = new Color();
+    public static final float READY_DELAY = 1f;
+    public float readyTimer = READY_DELAY;
     
     @Override
     public void create() {
@@ -28,7 +28,7 @@ public class TelepadEntity extends Entity {
     
     @Override
     public void act(float delta) {
-    
+        readyTimer = Utils.approach(readyTimer, 0, delta);
     }
     
     @Override

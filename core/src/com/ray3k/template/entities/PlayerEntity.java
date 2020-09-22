@@ -2,6 +2,7 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
+import com.badlogic.gdx.math.MathUtils;
 import com.dongbat.jbump.Collisions;
 import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
@@ -73,7 +74,11 @@ public class PlayerEntity extends Entity {
             if (collision.other.userData instanceof MonsterEntity) {
                 destroy = true;
             } else if (collision.other.userData instanceof TelepadEntity) {
-                core.transition(new GameScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                var telepad = (TelepadEntity) collision.other.userData;
+                if (MathUtils.isZero(telepad.readyTimer)) {
+                    core.transition(new GameScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                }
+                telepad.readyTimer = TelepadEntity.READY_DELAY;
             }
         }
     }
