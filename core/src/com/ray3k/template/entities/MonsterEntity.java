@@ -2,7 +2,6 @@ package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
 import com.dongbat.jbump.Collisions;
-import com.dongbat.jbump.Response.Result;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.MonsterAnimation.*;
@@ -12,6 +11,7 @@ import static com.ray3k.template.screens.GameScreen.*;
 
 public class MonsterEntity extends Entity {
     public static final Color DEBUG_COLOR = new Color();
+    public static final  float MOVE_SPEED = 50f;
     
     @Override
     public void create() {

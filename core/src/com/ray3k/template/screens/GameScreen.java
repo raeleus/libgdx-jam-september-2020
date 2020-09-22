@@ -125,6 +125,20 @@ public class GameScreen extends JamScreen {
                         var monsterEntity = new MonsterEntity();
                         monsterEntity.setPosition(x + 8, y - 8);
                         entityController.add(monsterEntity);
+                        switch (valuesMap.get("movement").asString()) {
+                            case "east":
+                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 0);
+                                break;
+                            case "west":
+                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 180);
+                                break;
+                            case "north":
+                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 90);
+                                break;
+                            case "south":
+                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 270);
+                                break;
+                        }
                         break;
                     case "obstacle":
                         var obstacleEntity = new ObstacleEntity();

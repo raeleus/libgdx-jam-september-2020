@@ -27,17 +27,71 @@
       "gridCellsX": 60,
       "gridCellsY": 60,
       "entities": [
-        {"name": "monster", "id": 1, "_eid": "63580257", "x": 400, "y": 208, "originX": 0, "originY": 0},
-        {"name": "monster", "id": 2, "_eid": "63580257", "x": 256, "y": 368, "originX": 0, "originY": 0},
-        {"name": "monster", "id": 3, "_eid": "63580257", "x": 288, "y": 608, "originX": 0, "originY": 0},
-        {"name": "monster", "id": 4, "_eid": "63580257", "x": 560, "y": 208, "originX": 0, "originY": 0},
-        {"name": "monster", "id": 5, "_eid": "63580257", "x": 816, "y": 144, "originX": 0, "originY": 0},
-        {"name": "monster", "id": 6, "_eid": "63580257", "x": 672, "y": 544, "originX": 0, "originY": 0},
+        {
+          "name": "monster",
+          "id": 1,
+          "_eid": "63580257",
+          "x": 400,
+          "y": 208,
+          "originX": 0,
+          "originY": 0,
+          "values": {"movement": "stationary"}
+        },
+        {
+          "name": "monster",
+          "id": 2,
+          "_eid": "63580257",
+          "x": 256,
+          "y": 368,
+          "originX": 0,
+          "originY": 0,
+          "values": {"movement": "stationary"}
+        },
+        {
+          "name": "monster",
+          "id": 3,
+          "_eid": "63580257",
+          "x": 288,
+          "y": 608,
+          "originX": 0,
+          "originY": 0,
+          "values": {"movement": "stationary"}
+        },
+        {
+          "name": "monster",
+          "id": 4,
+          "_eid": "63580257",
+          "x": 560,
+          "y": 208,
+          "originX": 0,
+          "originY": 0,
+          "values": {"movement": "east"}
+        },
+        {
+          "name": "monster",
+          "id": 5,
+          "_eid": "63580257",
+          "x": 816,
+          "y": 144,
+          "originX": 0,
+          "originY": 0,
+          "values": {"movement": "stationary"}
+        },
+        {
+          "name": "monster",
+          "id": 6,
+          "_eid": "63580257",
+          "x": 672,
+          "y": 544,
+          "originX": 0,
+          "originY": 0,
+          "values": {"movement": "stationary"}
+        },
         {"name": "obstacle", "id": 17, "_eid": "64494766", "x": 0, "y": 944, "originX": 0, "originY": 0},
         {"name": "obstacle", "id": 18, "_eid": "64494766", "x": 800, "y": 656, "originX": 0, "originY": 0},
         {"name": "obstacle", "id": 19, "_eid": "64494766", "x": 816, "y": 656, "originX": 0, "originY": 0},
         {"name": "obstacle", "id": 20, "_eid": "64494766", "x": 832, "y": 656, "originX": 0, "originY": 0},
-        {"name": "player", "id": 22, "_eid": "56653788", "x": 816, "y": 624, "originX": 0, "originY": 0},
+        {"name": "player", "id": 22, "_eid": "56653788", "x": 608, "y": 256, "originX": 0, "originY": 0},
         {
           "name": "telepad",
           "id": 23,
