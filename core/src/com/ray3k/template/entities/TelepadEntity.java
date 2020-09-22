@@ -13,6 +13,11 @@ public class TelepadEntity extends Entity {
     public static final Color DEBUG_COLOR = new Color();
     public static final float READY_DELAY = 1f;
     public float readyTimer = READY_DELAY;
+    public String loadLevel;
+    
+    public TelepadEntity(String loadLevel) {
+        this.loadLevel = loadLevel;
+    }
     
     @Override
     public void create() {

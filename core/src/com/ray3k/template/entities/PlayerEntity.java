@@ -76,7 +76,7 @@ public class PlayerEntity extends Entity {
             } else if (collision.other.userData instanceof TelepadEntity) {
                 var telepad = (TelepadEntity) collision.other.userData;
                 if (MathUtils.isZero(telepad.readyTimer)) {
-                    core.transition(new GameScreen(), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                    core.transition(new GameScreen(this, telepad.loadLevel), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
                 }
                 telepad.readyTimer = TelepadEntity.READY_DELAY;
             }

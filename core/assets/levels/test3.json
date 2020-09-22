@@ -46,7 +46,7 @@
           "y": 560,
           "originX": 0,
           "originY": 0,
-          "values": {"load-level": "test3"}
+          "values": {"load-level": "test2"}
         }
       ]
     },
@@ -60,7 +60,7 @@
       "gridCellsX": 60,
       "gridCellsY": 60,
       "decals": [
-        {"x": 480, "y": 480, "texture": "map-test.png"}
+        {"x": 480, "y": 480, "texture": "map-test2.png"}
       ],
       "folder": "game"
     }

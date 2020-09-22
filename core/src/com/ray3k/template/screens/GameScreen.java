@@ -32,6 +32,17 @@ public class GameScreen extends JamScreen {
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
+    private String levelName;
+    public PlayerEntity player;
+    
+    public GameScreen() {
+        this(null, "test2");
+    }
+    
+    public GameScreen(PlayerEntity player, String levelName) {
+        this.player = player;
+        this.levelName = levelName;
+    }
     
     @Override
     public void show() {
@@ -75,7 +86,7 @@ public class GameScreen extends JamScreen {
         viewport = new FitViewport(1024, 576, camera);
     
         entityController.clear();
-    
+        
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
             int levelWidth;
@@ -98,23 +109,17 @@ public class GameScreen extends JamScreen {
                         break;
                 }
             }
-        
+            
             @Override
             public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
                                ObjectMap<String, OgmoValue> valuesMap) {
                 switch (name) {
                     case "player":
-                        var playerEntity = new PlayerEntity();
-                        playerEntity.setPosition(x + 8, y - 8);
-                        entityController.add(playerEntity);
-                    
-                        var cameraEntity = new CameraEntity(viewport, camera, playerEntity);
-                        cameraEntity.boundaryLeft = 0;
-                        cameraEntity.boundaryRight = levelWidth;
-                        cameraEntity.boundaryBottom = 0;
-                        cameraEntity.boundaryTop = levelHeight;
-                        entityController.add(cameraEntity);
+                        if (player == null) {
+                            player = new PlayerEntity();
+                            player.setPosition(x + 8, y - 8);
+                        }
                         break;
                     case "monster":
                         var monsterEntity = new MonsterEntity();
@@ -127,7 +132,7 @@ public class GameScreen extends JamScreen {
                         entityController.add(obstacleEntity);
                         break;
                     case "telepad":
-                        var telepadEntity = new TelepadEntity();
+                        var telepadEntity = new TelepadEntity(valuesMap.get("load-level").asString());
                         telepadEntity.setPosition(x + 8, y - 8);
                         entityController.add(telepadEntity);
                         break;
@@ -141,8 +146,20 @@ public class GameScreen extends JamScreen {
                 path = path.substring(0, path.length() - 4);
                 entityController.add(new DecalEntity(path, centerX, centerY));
             }
+    
+            @Override
+            public void levelComplete() {
+                entityController.add(player);
+        
+                var cameraEntity = new CameraEntity(viewport, camera, player);
+                cameraEntity.boundaryLeft = 0;
+                cameraEntity.boundaryRight = levelWidth;
+                cameraEntity.boundaryBottom = 0;
+                cameraEntity.boundaryTop = levelHeight;
+                entityController.add(cameraEntity);
+            }
         });
-        ogmoReader.readFile(Gdx.files.internal("levels/test2.json"));
+        ogmoReader.readFile(Gdx.files.internal("levels/" + levelName + ".json"));
     }
     
     @Override
