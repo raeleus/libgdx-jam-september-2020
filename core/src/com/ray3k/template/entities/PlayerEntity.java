@@ -66,7 +66,10 @@ public class PlayerEntity extends Entity {
         if (gameScreen.isBindingJustPressed(ATTACK)) {
             var attack = new AttackEntity();
             entityController.add(attack);
-            attack.setPosition(x, y);
+            if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.right)attack.setPosition(x + AttackEntity.SIZE / 2 + 8, y);
+            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left)attack.setPosition(x - AttackEntity.SIZE / 2 - 8, y);
+            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.up)attack.setPosition(x, y + AttackEntity.SIZE / 2 + 8);
+            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.down)attack.setPosition(x, y - AttackEntity.SIZE / 2 - 8);
         }
     }
     
