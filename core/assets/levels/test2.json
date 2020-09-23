@@ -101,6 +101,16 @@
           "originX": 0,
           "originY": 0,
           "values": {"load-level": "test3"}
+        },
+        {
+          "name": "switch",
+          "id": 24,
+          "_eid": "82871882",
+          "x": 640,
+          "y": 208,
+          "originX": 0,
+          "originY": 0,
+          "values": {"activated": false}
         }
       ]
     },

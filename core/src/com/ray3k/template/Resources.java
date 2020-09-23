@@ -32,6 +32,10 @@ public class Resources {
 
     public static AnimationStateData spine_ray3kAnimationData;
 
+    public static SkeletonData spine_switch;
+
+    public static AnimationStateData spine_switchAnimationData;
+
     public static SkeletonData spine_telepad;
 
     public static AnimationStateData spine_telepadAnimationData;
@@ -90,6 +94,10 @@ public class Resources {
         spine_ray3kAnimationData = assetManager.get("spine/ray3k.json-animation");
         Ray3kAnimation.animation = spine_ray3k.findAnimation("animation");
         Ray3kAnimation.stand = spine_ray3k.findAnimation("stand");
+        spine_switch = assetManager.get("spine/switch.json");
+        spine_switchAnimationData = assetManager.get("spine/switch.json-animation");
+        SwitchAnimation.off = spine_switch.findAnimation("off");
+        SwitchAnimation.on = spine_switch.findAnimation("on");
         spine_telepad = assetManager.get("spine/telepad.json");
         spine_telepadAnimationData = assetManager.get("spine/telepad.json-animation");
         TelepadAnimation.animation = spine_telepad.findAnimation("animation");
@@ -146,6 +154,12 @@ public class Resources {
         public static Animation animation;
 
         public static Animation stand;
+    }
+
+    public static class SwitchAnimation {
+        public static Animation off;
+
+        public static Animation on;
     }
 
     public static class TelepadAnimation {

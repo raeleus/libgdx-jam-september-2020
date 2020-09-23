@@ -199,6 +199,20 @@ game/player
   orig: 16, 17
   offset: 4, 0
   index: -1
+game/switch-off
+  rotate: true
+  xy: 362, 7
+  size: 10, 14
+  orig: 16, 16
+  offset: 3, 1
+  index: -1
+game/switch-on
+  rotate: true
+  xy: 378, 7
+  size: 10, 14
+  orig: 16, 16
+  offset: 3, 1
+  index: -1
 game/telepad
   rotate: false
   xy: 325, 3

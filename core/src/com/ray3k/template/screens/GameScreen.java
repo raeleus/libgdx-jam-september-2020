@@ -155,6 +155,11 @@ public class GameScreen extends JamScreen {
                         telepadEntity.setPosition(x + 8, y - 8);
                         entityController.add(telepadEntity);
                         break;
+                    case "switch":
+                        var switchEntity = new SwitchEntity();
+                        switchEntity.setPosition(x + 8, y -8);
+                        entityController.add(switchEntity);
+                        break;
                 }
             }
         

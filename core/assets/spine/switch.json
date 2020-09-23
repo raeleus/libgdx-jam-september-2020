@@ -1,0 +1,41 @@
+{
+"skeleton": {
+	"hash": "TNeC1+1BuuH0HfQvXtWl6laFuaI",
+	"spine": "3.8.99",
+	"x": -8,
+	"y": -8,
+	"width": 16,
+	"height": 16,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "game/switch-on", "bone": "root", "attachment": "game/switch-on" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"game/switch-on": {
+				"game/switch-off": { "width": 16, "height": 16 },
+				"game/switch-on": { "width": 16, "height": 16 }
+			}
+		}
+	}
+],
+"animations": {
+	"off": {
+		"slots": {
+			"game/switch-on": {
+				"attachment": [
+					{ "name": "game/switch-off" }
+				]
+			}
+		}
+	},
+	"on": {}
+}
+}
