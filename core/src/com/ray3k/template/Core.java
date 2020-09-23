@@ -28,6 +28,7 @@ public class Core extends JamGame {
     public static final String PROJECT_NAME = "Template Game";
     public static Core core;
     public static Skin skin;
+    public static TextureAtlas textureAtlas;
     public static SkeletonRenderer skeletonRenderer;
     public static ChangeListener sndChangeListener;
     public static EntityController entityController;
@@ -73,6 +74,7 @@ public class Core extends JamGame {
         setScreen(new LoadScreen(() -> {
             loadResources(assetManager);
             skin = skin_skin;
+            textureAtlas = assetManager.get("textures/textures.atlas");
         }));
         defaultTransition = Transitions.colorFade(Color.BLACK);
         defaultTransitionDuration = .5f;

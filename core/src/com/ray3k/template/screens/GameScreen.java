@@ -163,7 +163,7 @@ public class GameScreen extends JamScreen {
                               String folder) {
                 var path = folder + "/" + texture;
                 path = path.substring(0, path.length() - 4);
-                entityController.add(new DecalEntity(path, centerX, centerY));
+                if (textureAtlas.findRegion(path) != null) entityController.add(new DecalEntity(path, centerX, centerY));
             }
     
             @Override
