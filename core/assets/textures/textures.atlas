@@ -4,51 +4,79 @@ size: 512,512
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+bg
+  rotate: false
+  xy: 1, 311
+  size: 186, 196
+  orig: 186, 196
+  offset: 0, 0
+  index: -1
+button-normal
+  rotate: false
+  xy: 189, 470
+  size: 93, 37
+  orig: 93, 37
+  offset: 0, 0
+  index: -1
+button-normal-over
+  rotate: false
+  xy: 189, 431
+  size: 93, 37
+  orig: 93, 37
+  offset: 0, 0
+  index: -1
+button-normal-pressed
+  rotate: false
+  xy: 189, 392
+  size: 93, 37
+  orig: 93, 37
+  offset: 0, 0
+  index: -1
 font
   rotate: false
-  xy: 1, 420
+  xy: 1, 248
   size: 506, 61
   orig: 506, 61
   offset: 0, 0
   index: -1
 knob
   rotate: false
-  xy: 4, 491
+  xy: 189, 311
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 logo
   rotate: false
-  xy: 142, 490
+  xy: 189, 373
   size: 171, 17
   orig: 171, 17
   offset: 0, 0
   index: -1
 scroll-pane
   rotate: false
-  xy: 22, 491
+  xy: 207, 311
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 slider
   rotate: false
-  xy: 40, 491
+  xy: 189, 355
   size: 100, 16
   orig: 100, 16
   offset: 0, 0
   index: -1
 white
   rotate: false
-  xy: 1, 506
+  xy: 213, 352
   size: 1, 1
   orig: 1, 1
   offset: 0, 0
   index: -1
 window
   rotate: false
-  xy: 315, 483
+  xy: 189, 329
   size: 22, 24
   orig: 22, 24
   offset: 0, 0

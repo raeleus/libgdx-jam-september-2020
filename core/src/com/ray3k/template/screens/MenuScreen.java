@@ -67,8 +67,8 @@ public class MenuScreen extends JamScreen {
             }
         });
         
-        vfxEffect = new WaterDistortionEffect(.5f, 13);
-        vfxManager.addEffect(vfxEffect);
+        vfxEffect = new GlitchEffect();
+//        vfxManager.addEffect(vfxEffect);
     }
     
     @Override

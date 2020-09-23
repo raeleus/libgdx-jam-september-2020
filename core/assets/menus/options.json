@@ -370,7 +370,7 @@
 			}
 		],
 		"name": null,
-		"background": null,
+		"background": "bg-10",
 		"color": null,
 		"padLeft": 0,
 		"padRight": 0,
