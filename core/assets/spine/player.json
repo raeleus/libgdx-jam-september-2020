@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "IxsBX1jcW/uM5pq8mKGJBZm6YzQ",
+	"hash": "NJcGtf7JVCtLQtjWDv9GKUjI91w",
 	"spine": "3.8.99",
 	"x": -8,
 	"y": -8.5,
@@ -10,31 +10,51 @@
 	"audio": ""
 },
 "bones": [
-	{ "name": "root" }
+	{ "name": "root" },
+	{ "name": "game/player", "parent": "root", "length": 13.22, "x": 0.2, "y": 0.02 }
 ],
 "slots": [
-	{ "name": "game/wall", "bone": "root" },
-	{ "name": "game/player", "bone": "root", "attachment": "game/player" },
-	{ "name": "bbox", "bone": "root", "attachment": "bbox" }
+	{ "name": "game/player", "bone": "game/player", "attachment": "game/player" },
+	{ "name": "bbox", "bone": "root" }
 ],
 "skins": [
 	{
 		"name": "default",
 		"attachments": {
-			"bbox": {
-				"bbox": {
-					"type": "boundingbox",
-					"vertexCount": 4,
-					"vertices": [ -8.02, -8.38, -8.02, 8.42, 8.1, 8.47, 8, -8.38 ]
-				}
-			},
 			"game/player": {
-				"game/player": { "width": 16, "height": 17 }
+				"game/player": { "x": -0.2, "y": -0.02, "width": 16, "height": 17 }
 			}
 		}
 	}
 ],
 "animations": {
-	"animation": {}
+	"down": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": -90 }
+				]
+			}
+		}
+	},
+	"left": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": 180 }
+				]
+			}
+		}
+	},
+	"right": {},
+	"up": {
+		"bones": {
+			"game/player": {
+				"rotate": [
+					{ "angle": 90 }
+				]
+			}
+		}
+	}
 }
 }

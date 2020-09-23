@@ -24,6 +24,7 @@ public class PlayerEntity extends Entity {
         setSkeletonData(spine_player, spine_playerAnimationData);
         
         setCollisionBox(-8, -8, 16, 16, playerCollisionFilter);
+        animationState.setAnimation(0, PlayerAnimation.down, true);
     }
     
     @Override
@@ -48,6 +49,17 @@ public class PlayerEntity extends Entity {
             setDirection(direction);
         } else {
             setSpeed(0);
+        }
+        
+        //animation
+        if (gameScreen.isBindingPressed(RIGHT) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.right) {
+            animationState.setAnimation(0, PlayerAnimation.right, true);
+        } else if (gameScreen.isBindingPressed(LEFT) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.left) {
+            animationState.setAnimation(0, PlayerAnimation.left, true);
+        } else if (gameScreen.isBindingPressed(UP) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.up) {
+            animationState.setAnimation(0, PlayerAnimation.up, true);
+        }  else if (gameScreen.isBindingPressed(DOWN) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.down) {
+            animationState.setAnimation(0, PlayerAnimation.down, true);
         }
         
         //attack

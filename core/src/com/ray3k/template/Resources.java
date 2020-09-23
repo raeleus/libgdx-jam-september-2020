@@ -82,7 +82,10 @@ public class Resources {
         ObstacleAnimation.animation = spine_obstacle.findAnimation("animation");
         spine_player = assetManager.get("spine/player.json");
         spine_playerAnimationData = assetManager.get("spine/player.json-animation");
-        PlayerAnimation.animation = spine_player.findAnimation("animation");
+        PlayerAnimation.down = spine_player.findAnimation("down");
+        PlayerAnimation.left = spine_player.findAnimation("left");
+        PlayerAnimation.right = spine_player.findAnimation("right");
+        PlayerAnimation.up = spine_player.findAnimation("up");
         spine_ray3k = assetManager.get("spine/ray3k.json");
         spine_ray3kAnimationData = assetManager.get("spine/ray3k.json-animation");
         Ray3kAnimation.animation = spine_ray3k.findAnimation("animation");
@@ -130,7 +133,13 @@ public class Resources {
     }
 
     public static class PlayerAnimation {
-        public static Animation animation;
+        public static Animation down;
+
+        public static Animation left;
+
+        public static Animation right;
+
+        public static Animation up;
     }
 
     public static class Ray3kAnimation {

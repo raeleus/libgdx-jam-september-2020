@@ -194,8 +194,8 @@ game/obstacle
   index: -1
 game/player
   rotate: true
-  xy: 343, 8
-  size: 9, 17
+  xy: 343, 5
+  size: 12, 17
   orig: 16, 17
   offset: 4, 0
   index: -1
