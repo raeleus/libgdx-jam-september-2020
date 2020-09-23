@@ -6,6 +6,8 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.scenes.scene2d.actions.TemporalAction;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
@@ -14,13 +16,14 @@ import com.crashinvaders.vfx.effects.WaterDistortionEffect;
 import com.ray3k.template.*;
 import com.ray3k.template.vfx.*;
 
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
 
 public class MenuScreen extends JamScreen {
     private Stage stage;
     private final static Color BG_COLOR = new Color(Color.BLACK);
-    private ChainVfxEffect vfxEffect;
+    private GlitchEffect vfxEffect;
     
     @Override
     public void show() {
@@ -68,7 +71,23 @@ public class MenuScreen extends JamScreen {
         });
         
         vfxEffect = new GlitchEffect();
-//        vfxManager.addEffect(vfxEffect);
+        vfxEffect.setAmount(0);
+        vfxEffect.rebind();
+        vfxManager.addEffect(vfxEffect);
+        
+        stage.addAction(forever(sequence(delay(10f), new TemporalAction(.25f) {
+            @Override
+            protected void update(float percent) {
+                vfxEffect.setAmount(percent * .2f);
+                vfxEffect.rebind();
+            }
+        }, new TemporalAction(.25f) {
+            @Override
+            protected void update(float percent) {
+                vfxEffect.setAmount((1 - percent) * .2f);
+                vfxEffect.rebind();
+            }
+        })));
     }
     
     @Override
