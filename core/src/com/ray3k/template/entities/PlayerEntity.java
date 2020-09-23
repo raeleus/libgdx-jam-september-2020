@@ -4,7 +4,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.dongbat.jbump.Collisions;
-import com.dongbat.jbump.Response.Result;
 import com.ray3k.template.*;
 import com.ray3k.template.screens.*;
 import com.ray3k.template.transitions.*;
@@ -18,6 +17,8 @@ import static com.ray3k.template.screens.GameScreen.*;
 public class PlayerEntity extends Entity {
     public static final float MOVE_SPEED = 50f;
     public static final Color DEBUG_COLOR = new Color();
+    public static final float ATTACK_DELAY = .5f;
+    public float attackTimer = .5f;
     
     @Override
     public void create() {
@@ -63,7 +64,9 @@ public class PlayerEntity extends Entity {
         }
         
         //attack
-        if (gameScreen.isBindingJustPressed(ATTACK)) {
+        attackTimer = Utils.approach(attackTimer, 0, delta);
+        if (attackTimer == 0 && gameScreen.isBindingJustPressed(ATTACK)) {
+            attackTimer = ATTACK_DELAY;
             var attack = new AttackEntity();
             entityController.add(attack);
             if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.right)attack.setPosition(x + AttackEntity.SIZE / 2 + 8, y);
