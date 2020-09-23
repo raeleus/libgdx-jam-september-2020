@@ -1,6 +1,6 @@
 {
 "skeleton": {
-	"hash": "gmVU26y7xEe8fT3C2YCkDHFEwn0",
+	"hash": "/4VwIF6ZEDu3ZCqwQYitDGUDaS4",
 	"spine": "3.8.99",
 	"x": -8,
 	"y": -8,
@@ -45,11 +45,11 @@
 		"slots": {
 			"animation": {
 				"attachment": [
-					{ "time": 0.1, "name": "game/cow (2)" },
-					{ "time": 0.2, "name": "game/cow (3)" },
-					{ "time": 0.3, "name": "game/cow (4)" },
-					{ "time": 0.4, "name": "game/cow (5)" },
-					{ "time": 0.5, "name": "game/cow (1)" }
+					{ "time": 0.1333, "name": "game/cow (2)" },
+					{ "time": 0.2667, "name": "game/cow (3)" },
+					{ "time": 0.4333, "name": "game/cow (4)" },
+					{ "time": 0.5667, "name": "game/cow (5)" },
+					{ "time": 0.7, "name": "game/cow (1)" }
 				]
 			}
 		}
@@ -59,11 +59,11 @@
 			"animation": {
 				"attachment": [
 					{ "name": "game/cow (6)" },
-					{ "time": 0.1, "name": "game/cow (7)" },
-					{ "time": 0.2, "name": "game/cow (8)" },
-					{ "time": 0.3, "name": "game/cow (9)" },
-					{ "time": 0.4, "name": "game/cow (10)" },
-					{ "time": 0.5, "name": "game/cow (6)" }
+					{ "time": 0.1333, "name": "game/cow (7)" },
+					{ "time": 0.3, "name": "game/cow (8)" },
+					{ "time": 0.4333, "name": "game/cow (9)" },
+					{ "time": 0.5667, "name": "game/cow (10)" },
+					{ "time": 0.7, "name": "game/cow (6)" }
 				]
 			}
 		},
@@ -80,11 +80,11 @@
 			"animation": {
 				"attachment": [
 					{ "name": "game/cow (6)" },
-					{ "time": 0.1, "name": "game/cow (7)" },
-					{ "time": 0.2, "name": "game/cow (8)" },
-					{ "time": 0.3, "name": "game/cow (9)" },
-					{ "time": 0.4, "name": "game/cow (10)" },
-					{ "time": 0.5, "name": "game/cow (6)" }
+					{ "time": 0.1333, "name": "game/cow (7)" },
+					{ "time": 0.2667, "name": "game/cow (8)" },
+					{ "time": 0.4333, "name": "game/cow (9)" },
+					{ "time": 0.5667, "name": "game/cow (10)" },
+					{ "time": 0.7, "name": "game/cow (6)" }
 				]
 			}
 		}
@@ -95,11 +95,11 @@
 			"animation": {
 				"attachment": [
 					{ "name": "game/cow (11)" },
-					{ "time": 0.1, "name": "game/cow (12)" },
-					{ "time": 0.2, "name": "game/cow (13)" },
-					{ "time": 0.3, "name": "game/cow (14)" },
-					{ "time": 0.4, "name": "game/cow (15)" },
-					{ "time": 0.5, "name": "game/cow (11)" }
+					{ "time": 0.1333, "name": "game/cow (12)" },
+					{ "time": 0.2667, "name": "game/cow (13)" },
+					{ "time": 0.4333, "name": "game/cow (14)" },
+					{ "time": 0.5667, "name": "game/cow (15)" },
+					{ "time": 0.7, "name": "game/cow (11)" }
 				]
 			}
 		}
