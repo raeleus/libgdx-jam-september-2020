@@ -9,7 +9,10 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.crashinvaders.vfx.effects.ChainVfxEffect;
+import com.crashinvaders.vfx.effects.WaterDistortionEffect;
 import com.ray3k.template.*;
+import com.ray3k.template.vfx.*;
 
 import static com.ray3k.template.Core.*;
 import static com.ray3k.template.Resources.*;
@@ -17,6 +20,7 @@ import static com.ray3k.template.Resources.*;
 public class MenuScreen extends JamScreen {
     private Stage stage;
     private final static Color BG_COLOR = new Color(Color.BLACK);
+    private ChainVfxEffect vfxEffect;
     
     @Override
     public void show() {
@@ -62,11 +66,15 @@ public class MenuScreen extends JamScreen {
                 core.transition(new CreditsScreen());
             }
         });
+        
+        vfxEffect = new WaterDistortionEffect(.5f, 13);
+        vfxManager.addEffect(vfxEffect);
     }
     
     @Override
     public void act(float delta) {
         stage.act(delta);
+        vfxManager.update(delta);
     }
     
     @Override
@@ -74,12 +82,25 @@ public class MenuScreen extends JamScreen {
         Gdx.gl.glClearColor(BG_COLOR.r, BG_COLOR.g, BG_COLOR.b, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
     
+        vfxManager.cleanUpBuffers();
+        vfxManager.beginInputCapture();
         batch.setBlendFunction(GL20.GL_SRC_ALPHA, GL20.GL_ONE_MINUS_SRC_ALPHA);
         stage.draw();
+        vfxManager.endInputCapture();
+        vfxManager.applyEffects();
+        vfxManager.renderToScreen();
     }
     
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
+        vfxManager.resize(width, height);
+    }
+    
+    @Override
+    public void hide() {
+        super.hide();
+        vfxManager.removeAllEffects();
+        vfxEffect.dispose();
     }
 }
