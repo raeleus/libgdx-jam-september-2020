@@ -6,3 +6,4 @@ spine/ray3k.json
 spine/switch.json
 spine/telepad.json
 spine/wall.json
+spine/zaida.json

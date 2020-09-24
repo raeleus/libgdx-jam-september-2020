@@ -44,6 +44,10 @@ public class Resources {
 
     public static AnimationStateData spine_wallAnimationData;
 
+    public static SkeletonData spine_zaida;
+
+    public static AnimationStateData spine_zaidaAnimationData;
+
     public static TextureAtlas textures_textures;
 
     public static Sound sfx_click;
@@ -63,6 +67,8 @@ public class Resources {
     public static Sound sfx_logoRay3kTune;
 
     public static Sound sfx_logoRay3k;
+
+    public static Sound sfx_logoWoosh;
 
     public static Music bgm_audioSample;
 
@@ -104,6 +110,10 @@ public class Resources {
         spine_wall = assetManager.get("spine/wall.json");
         spine_wallAnimationData = assetManager.get("spine/wall.json-animation");
         WallAnimation.animation = spine_wall.findAnimation("animation");
+        spine_zaida = assetManager.get("spine/zaida.json");
+        spine_zaidaAnimationData = assetManager.get("spine/zaida.json-animation");
+        ZaidaAnimation.animation = spine_zaida.findAnimation("animation");
+        ZaidaAnimation.stand = spine_zaida.findAnimation("stand");
         textures_textures = assetManager.get("textures/textures.atlas");
         sfx_click = assetManager.get("sfx/click.mp3");
         sfx_logoLibgdxChop = assetManager.get("sfx/logo/libgdx-chop.mp3");
@@ -114,6 +124,7 @@ public class Resources {
         sfx_logoLibgdxTitle = assetManager.get("sfx/logo/libgdx-title.mp3");
         sfx_logoRay3kTune = assetManager.get("sfx/logo/ray3k-tune.mp3");
         sfx_logoRay3k = assetManager.get("sfx/logo/ray3k.mp3");
+        sfx_logoWoosh = assetManager.get("sfx/logo/woosh.mp3");
         bgm_audioSample = assetManager.get("bgm/audio-sample.mp3");
         bgm_menu = assetManager.get("bgm/menu.mp3");
     }
@@ -168,5 +179,11 @@ public class Resources {
 
     public static class WallAnimation {
         public static Animation animation;
+    }
+
+    public static class ZaidaAnimation {
+        public static Animation animation;
+
+        public static Animation stand;
     }
 }

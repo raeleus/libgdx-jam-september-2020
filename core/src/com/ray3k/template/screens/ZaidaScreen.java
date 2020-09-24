@@ -13,15 +13,17 @@ import com.badlogic.gdx.utils.Array;
 import com.badlogic.gdx.utils.ObjectSet;
 import com.badlogic.gdx.utils.Scaling;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
-import com.esotericsoftware.spine.*;
+import com.esotericsoftware.spine.AnimationState;
+import com.esotericsoftware.spine.Event;
+import com.esotericsoftware.spine.Skeleton;
 import com.esotericsoftware.spine.utils.SkeletonDrawable;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
+import static com.ray3k.template.Resources.ZaidaAnimation.*;
 import static com.ray3k.template.Resources.*;
-import static com.ray3k.template.Resources.Ray3kAnimation.*;
 
-public class LogoScreen extends JamScreen {
+public class ZaidaScreen extends JamScreen {
     private Stage stage;
     private Array<SpineDrawable> spineDrawables;
     private final static Color BG_COLOR = new Color(Color.BLACK);
@@ -34,8 +36,8 @@ public class LogoScreen extends JamScreen {
         spineDrawables = new Array<>();
         sounds = new ObjectSet<>();
     
-        Skeleton skeleton = new Skeleton(spine_ray3k);
-        AnimationState animationState = new AnimationState(spine_ray3kAnimationData);
+        Skeleton skeleton = new Skeleton(spine_zaida);
+        AnimationState animationState = new AnimationState(spine_zaidaAnimationData);
         var spineDrawable = new SpineDrawable(skeletonRenderer, skeleton, animationState);
         spineDrawable.getAnimationState().setAnimation(0, stand, false);
         spineDrawable.getAnimationState().apply(spineDrawable.getSkeleton());
@@ -58,7 +60,7 @@ public class LogoScreen extends JamScreen {
             @Override
             public void complete(AnimationState.TrackEntry entry) {
                 if (entry.getAnimation() == animation) {
-                    core.transition(new ZaidaScreen());
+                    core.transition(new MenuScreen());
                 }
             }
             
@@ -75,13 +77,13 @@ public class LogoScreen extends JamScreen {
         stage.addListener(new InputListener() {
             @Override
             public boolean keyDown(InputEvent event, int keycode) {
-                core.transition(new ZaidaScreen());
+                core.transition(new MenuScreen());
                 return true;
             }
             
             @Override
             public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
-                core.transition(new ZaidaScreen());
+                core.transition(new MenuScreen());
                 return true;
             }
         });
