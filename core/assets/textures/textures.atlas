@@ -89,133 +89,133 @@ filter: Nearest,Nearest
 repeat: none
 game/bush
   rotate: false
-  xy: 154, 1
+  xy: 220, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 game/cow (1)
   rotate: false
-  xy: 288, 17
+  xy: 354, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (10)
   rotate: false
-  xy: 306, 17
+  xy: 372, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (11)
   rotate: false
-  xy: 324, 17
+  xy: 390, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (12)
   rotate: false
-  xy: 342, 17
+  xy: 408, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (13)
   rotate: false
-  xy: 360, 17
+  xy: 426, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (14)
   rotate: false
-  xy: 378, 17
+  xy: 444, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (15)
   rotate: false
-  xy: 396, 17
+  xy: 462, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (2)
   rotate: false
-  xy: 414, 17
+  xy: 480, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (3)
   rotate: false
-  xy: 432, 17
+  xy: 498, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (4)
   rotate: false
-  xy: 450, 17
+  xy: 516, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (5)
   rotate: false
-  xy: 468, 17
+  xy: 534, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (6)
   rotate: false
-  xy: 486, 17
+  xy: 552, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (7)
   rotate: false
-  xy: 504, 17
+  xy: 570, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (8)
   rotate: false
-  xy: 522, 17
+  xy: 588, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (9)
   rotate: false
-  xy: 540, 17
+  xy: 606, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/dirt
   rotate: false
-  xy: 188, 1
+  xy: 254, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 game/fence
   rotate: false
-  xy: 91, 1
+  xy: 157, 1
   size: 61, 32
   orig: 61, 32
   offset: 0, 0
   index: -1
 game/grassy
   rotate: false
-  xy: 256, 5
+  xy: 322, 5
   size: 30, 28
   orig: 32, 32
   offset: 1, 2
@@ -243,56 +243,63 @@ game/map-test2
   index: -1
 game/monster
   rotate: false
-  xy: 558, 17
+  xy: 624, 17
   size: 16, 16
   orig: 16, 17
   offset: 0, 0
   index: -1
 game/obstacle
   rotate: false
-  xy: 576, 17
+  xy: 642, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/player
   rotate: true
-  xy: 630, 21
+  xy: 696, 21
   size: 12, 17
   orig: 16, 17
   offset: 4, 0
   index: -1
+game/sunflowerfence
+  rotate: false
+  xy: 91, 1
+  size: 64, 32
+  orig: 64, 32
+  offset: 0, 0
+  index: -1
 game/switch-off
   rotate: true
-  xy: 649, 23
+  xy: 715, 23
   size: 10, 14
   orig: 16, 16
   offset: 3, 1
   index: -1
 game/switch-on
   rotate: true
-  xy: 665, 23
+  xy: 731, 23
   size: 10, 14
   orig: 16, 16
   offset: 3, 1
   index: -1
 game/telepad
   rotate: false
-  xy: 612, 19
+  xy: 678, 19
   size: 16, 14
   orig: 16, 16
   offset: 0, 1
   index: -1
 game/tree
   rotate: false
-  xy: 222, 1
+  xy: 288, 1
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 game/wall
   rotate: false
-  xy: 594, 17
+  xy: 660, 17
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
