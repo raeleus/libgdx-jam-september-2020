@@ -55,14 +55,14 @@ public class PlayerEntity extends Entity {
         }
         
         //animation
-        if (gameScreen.isBindingPressed(RIGHT) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.right) {
-            animationState.setAnimation(0, PlayerAnimation.right, true);
-        } else if (gameScreen.isBindingPressed(LEFT) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.left) {
-            animationState.setAnimation(0, PlayerAnimation.left, true);
-        } else if (gameScreen.isBindingPressed(UP) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.up) {
-            animationState.setAnimation(0, PlayerAnimation.up, true);
-        }  else if (gameScreen.isBindingPressed(DOWN) && animationState.getCurrent(0).getAnimation() != PlayerAnimation.down) {
-            animationState.setAnimation(0, PlayerAnimation.down, true);
+        if (gameScreen.isBindingPressed(RIGHT)) {
+            if (animationState.getCurrent(0).getAnimation() != PlayerAnimation.right) animationState.setAnimation(0, PlayerAnimation.right, true);
+        } else if (gameScreen.isBindingPressed(LEFT)) {
+            if (animationState.getCurrent(0).getAnimation() != PlayerAnimation.left) animationState.setAnimation(0, PlayerAnimation.left, true);
+        } else if (gameScreen.isBindingPressed(UP)) {
+            if (animationState.getCurrent(0).getAnimation() != PlayerAnimation.up) animationState.setAnimation(0, PlayerAnimation.up, true);
+        }  else if (gameScreen.isBindingPressed(DOWN)) {
+            if (animationState.getCurrent(0).getAnimation() != PlayerAnimation.down) animationState.setAnimation(0, PlayerAnimation.down, true);
         }
         
         //attack
