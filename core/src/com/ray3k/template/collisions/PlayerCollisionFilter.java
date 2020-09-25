@@ -10,7 +10,7 @@ public class PlayerCollisionFilter implements CollisionFilter {
     
     @Override
     public Response filter(Item item, Item other) {
-        if (other.userData instanceof MonsterEntity || other.userData instanceof TelepadEntity) {
+        if (other.userData instanceof MonsterEntity || other.userData instanceof TelepadEntity || other.userData instanceof GoalEntity) {
             return Response.cross;
         } else if (other.userData instanceof WallEntity) {
             return Response.slide;

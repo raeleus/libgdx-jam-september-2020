@@ -160,6 +160,11 @@ public class GameScreen extends JamScreen {
                         switchEntity.setPosition(x + 8, y -8);
                         entityController.add(switchEntity);
                         break;
+                    case "goal":
+                        var goalEntity = new GoalEntity();
+                        goalEntity.setPosition(x + 8, y - 8);
+                        entityController.add(goalEntity);
+                        break;
                 }
             }
         

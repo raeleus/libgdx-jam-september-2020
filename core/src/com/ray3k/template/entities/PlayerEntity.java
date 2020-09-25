@@ -111,6 +111,10 @@ public class PlayerEntity extends Entity {
                     }));
                 }
                 telepad.readyTimer = TelepadEntity.READY_DELAY;
+            } else if (collision.other.userData instanceof  GoalEntity) {
+                gameScreen.stage.addAction(Actions.run(() -> {
+                    core.transition(new CompleteScreen(), new TransitionColorFade(Color.WHITE, Interpolation.circle), 2f);
+                }));
             }
         }
     }
