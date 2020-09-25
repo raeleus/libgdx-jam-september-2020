@@ -1,19 +1,23 @@
 package com.ray3k.template.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
+import com.rafaskoberg.gdx.typinglabel.TypingConfig;
+import com.rafaskoberg.gdx.typinglabel.TypingLabel;
 import com.ray3k.template.*;
 
 import static com.ray3k.template.Core.*;
 
-public class SplashScreen extends JamScreen {
+public class CompleteScreen extends JamScreen {
     private Stage stage;
     private final static Color BG_COLOR = new Color(Color.BLACK);
     
@@ -24,23 +28,23 @@ public class SplashScreen extends JamScreen {
         stage = new Stage(new ScreenViewport(), batch);
         Gdx.input.setInputProcessor(stage);
         
-        sceneBuilder.build(stage, skin, Gdx.files.internal("menus/splash.json"));
+        sceneBuilder.build(stage, skin, Gdx.files.internal("menus/complete.json"));
         
-        stage.addListener(new ClickListener(Input.Buttons.LEFT) {
+        TextButton textButton = stage.getRoot().findActor("ok");
+        textButton.addListener(sndChangeListener);
+        textButton.addListener(new ChangeListener() {
             @Override
-            public void clicked(InputEvent event, float x, float y) {
+            public void changed(ChangeEvent event, Actor actor) {
                 Gdx.input.setInputProcessor(null);
-                core.transition(new LibgdxScreen());
+                core.transition(new MenuScreen());
             }
         });
     
-        stage.addListener(new ClickListener(Input.Buttons.RIGHT) {
-            @Override
-            public void clicked(InputEvent event, float x, float y) {
-                Gdx.input.setInputProcessor(null);
-                core.transition(new CompleteScreen());
-            }
-        });
+        TypingConfig.INTERVAL_MULTIPLIERS_BY_CHAR.put('\n', .5f);
+        Label label = stage.getRoot().findActor("label");
+        var typingLabel = new TypingLabel(label.getText(), skin);
+        typingLabel.setAlignment(Align.center);
+        ((Table) label.getParent()).getCell(label).setActor(typingLabel);
     }
     
     @Override
@@ -60,10 +64,5 @@ public class SplashScreen extends JamScreen {
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
-    }
-    
-    @Override
-    public void dispose() {
-        stage.dispose();
     }
 }
