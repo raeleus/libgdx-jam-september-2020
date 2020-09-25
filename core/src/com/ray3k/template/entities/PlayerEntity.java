@@ -3,6 +3,8 @@ package com.ray3k.template.entities;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.dongbat.jbump.Collisions;
 import com.ray3k.template.*;
 import com.ray3k.template.screens.*;
@@ -98,10 +100,15 @@ public class PlayerEntity extends Entity {
             var collision = collisions.get(i);
             if (collision.other.userData instanceof MonsterEntity) {
                 destroy = true;
+                gameScreen.stage.addAction(Actions.delay(.25f, Actions.run(() -> {
+                    core.transition(new GameOverScreen(), new TransitionColorFade(Color.BLACK, Interpolation.circle), 2f);
+                })));
             } else if (collision.other.userData instanceof TelepadEntity) {
                 var telepad = (TelepadEntity) collision.other.userData;
                 if (MathUtils.isZero(telepad.readyTimer)) {
-                    core.transition(new GameScreen(this, telepad.loadLevel), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                    gameScreen.stage.addAction(Actions.run(() -> {
+                        core.transition(new GameScreen(this, telepad.loadLevel), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                    }));
                 }
                 telepad.readyTimer = TelepadEntity.READY_DELAY;
             }
