@@ -36,7 +36,7 @@ public class MonsterEntity extends Entity {
             hurtTimer -= delta;
             if (hurtTimer <= 0) {
                 hurtTimer = 0;
-                switch (MathUtils.random(4)) {
+                switch (MathUtils.random(10)) {
                     case 0:
                         setMotion(MOVE_SPEED, 0);
                         break;
@@ -51,6 +51,9 @@ public class MonsterEntity extends Entity {
                         break;
                     case 4:
                         setMotion(0, 0);
+                        break;
+                    default:
+                        setSpeed(MOVE_SPEED);
                         break;
                 }
             }
