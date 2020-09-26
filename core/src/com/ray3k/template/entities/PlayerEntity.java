@@ -5,6 +5,7 @@ import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.utils.Array;
 import com.dongbat.jbump.Collisions;
 import com.ray3k.template.*;
 import com.ray3k.template.screens.*;
@@ -107,7 +108,11 @@ public class PlayerEntity extends Entity {
                 var telepad = (TelepadEntity) collision.other.userData;
                 if (MathUtils.isZero(telepad.readyTimer)) {
                     gameScreen.stage.addAction(Actions.run(() -> {
-                        core.transition(new GameScreen(this, telepad.loadLevel), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                        var addEntities = new Array<Entity>();
+                        for (var entity : entityController.entities) {
+                            if (entity instanceof PlayerEntity || entity instanceof MonsterEntity) addEntities.add(entity);
+                        }
+                        core.transition(new GameScreen(addEntities, telepad.loadLevel), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
                     }));
                 }
                 telepad.readyTimer = TelepadEntity.READY_DELAY;

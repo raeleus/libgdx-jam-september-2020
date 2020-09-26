@@ -1,13 +1,11 @@
 package com.ray3k.template.screens;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input.Buttons;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputMultiplexer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 import com.badlogic.gdx.scenes.scene2d.Stage;
@@ -21,7 +19,6 @@ import com.ray3k.template.OgmoReader.*;
 import com.ray3k.template.Resources.*;
 import com.ray3k.template.entities.*;
 import com.ray3k.template.screens.DialogPause.*;
-import com.ray3k.template.transitions.*;
 import space.earlygrey.shapedrawer.ShapeDrawer;
 
 import static com.ray3k.template.Core.*;
@@ -34,14 +31,15 @@ public class GameScreen extends JamScreen {
     public boolean paused;
     private ChainVfxEffect vfxEffect;
     private String levelName;
-    public PlayerEntity player;
+    private Array<Entity> addEntities;
+    private PlayerEntity player;
     
     public GameScreen() {
         this(null, "test2");
     }
     
-    public GameScreen(PlayerEntity player, String levelName) {
-        this.player = player;
+    public GameScreen(Array<Entity> addEntities, String levelName) {
+        this.addEntities = addEntities == null ? new Array<>() : new Array<>(addEntities);
         this.levelName = levelName;
     }
     
@@ -88,6 +86,11 @@ public class GameScreen extends JamScreen {
     
         entityController.clear();
         
+        for (var entity : addEntities) {
+            if (entity instanceof PlayerEntity) player = (PlayerEntity) entity;
+            entityController.add(entity);
+        }
+        
         var ogmoReader = new OgmoReader();
         ogmoReader.addListener(new OgmoAdapter() {
             int levelWidth;
@@ -123,26 +126,28 @@ public class GameScreen extends JamScreen {
                         }
                         break;
                     case "monster":
-                        var monsterEntity = new MonsterEntity();
-                        monsterEntity.setPosition(x + 8, y - 8);
-                        entityController.add(monsterEntity);
-                        switch (valuesMap.get("movement").asString()) {
-                            case "east":
-                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 0);
-                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.right, true);
-                                break;
-                            case "west":
-                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 180);
-                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.left, true);
-                                break;
-                            case "north":
-                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 90);
-                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.up, true);
-                                break;
-                            case "south":
-                                monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 270);
-                                monsterEntity.animationState.setAnimation(0, MonsterAnimation.down, true);
-                                break;
+                        if (addEntities.size == 0) {
+                            var monsterEntity = new MonsterEntity();
+                            monsterEntity.setPosition(x + 8, y - 8);
+                            entityController.add(monsterEntity);
+                            switch (valuesMap.get("movement").asString()) {
+                                case "east":
+                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 0);
+                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.right, true);
+                                    break;
+                                case "west":
+                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 180);
+                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.left, true);
+                                    break;
+                                case "north":
+                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 90);
+                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.up, true);
+                                    break;
+                                case "south":
+                                    monsterEntity.setMotion(MonsterEntity.MOVE_SPEED, 270);
+                                    monsterEntity.animationState.setAnimation(0, MonsterAnimation.down, true);
+                                    break;
+                            }
                         }
                         break;
                     case "obstacle":
