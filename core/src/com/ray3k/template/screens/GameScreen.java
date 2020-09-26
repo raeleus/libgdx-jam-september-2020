@@ -123,6 +123,7 @@ public class GameScreen extends JamScreen {
                         if (player == null) {
                             player = new PlayerEntity();
                             player.setPosition(x + 8, y - 8);
+                            entityController.add(player);
                         }
                         break;
                     case "monster":
@@ -183,8 +184,6 @@ public class GameScreen extends JamScreen {
     
             @Override
             public void levelComplete() {
-                entityController.add(player);
-        
                 var cameraEntity = new CameraEntity(viewport, camera, player);
                 cameraEntity.boundaryLeft = 0;
                 cameraEntity.boundaryRight = levelWidth;
