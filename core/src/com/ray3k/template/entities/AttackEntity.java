@@ -13,6 +13,11 @@ public class AttackEntity extends Entity {
     public static float LIFE = .2f;
     public float timer = LIFE;
     private Array<Entity> hitEntities = new Array<>();
+    public float attackDirection;
+    
+    public AttackEntity(int attackDirection) {
+        this.attackDirection = attackDirection;
+    }
     
     @Override
     public void create() {
@@ -51,7 +56,10 @@ public class AttackEntity extends Entity {
             if (!hitEntities.contains((Entity) collision.other.userData, true)) {
                 if (collision.other.userData instanceof MonsterEntity) {
                     var monster = (MonsterEntity) collision.other.userData;
-                    monster.destroy = true;
+                    
+                    monster.setMotion(MonsterEntity.HURT_SPEED, attackDirection);
+                    monster.hurtTimer = MonsterEntity.HURT_TIME;
+                    
                     hitEntities.add(monster);
                 } else if (collision.other.userData instanceof SwitchEntity) {
                     var switchEntity = (SwitchEntity) collision.other.userData;

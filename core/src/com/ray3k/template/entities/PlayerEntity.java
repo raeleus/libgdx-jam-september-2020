@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Interpolation;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.Array;
 import com.dongbat.jbump.Collisions;
 import com.ray3k.template.*;
@@ -69,7 +70,11 @@ public class PlayerEntity extends Entity {
         attackTimer = Utils.approach(attackTimer, 0, delta);
         if (attackTimer == 0 && gameScreen.isBindingJustPressed(ATTACK)) {
             attackTimer = ATTACK_DELAY;
-            var attack = new AttackEntity();
+            int attackDirection = 0;
+            if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.up) attackDirection = 90;
+            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left) attackDirection = 180;
+            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.down) attackDirection = 270;
+            var attack = new AttackEntity(attackDirection);
             entityController.add(attack);
             if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.right)attack.setPosition(x + AttackEntity.SIZE / 2 + 8, y);
             else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left)attack.setPosition(x - AttackEntity.SIZE / 2 - 8, y);

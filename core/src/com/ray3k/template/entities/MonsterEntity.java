@@ -1,6 +1,7 @@
 package com.ray3k.template.entities;
 
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.math.MathUtils;
 import com.dongbat.jbump.Collisions;
 
 import static com.ray3k.template.Core.*;
@@ -12,6 +13,9 @@ import static com.ray3k.template.screens.GameScreen.*;
 public class MonsterEntity extends Entity {
     public static final Color DEBUG_COLOR = new Color();
     public static final  float MOVE_SPEED = 50f;
+    public static final float HURT_SPEED = 100f;
+    public static final float HURT_TIME = .5f;
+    public float hurtTimer;
     
     @Override
     public void create() {
@@ -28,7 +32,29 @@ public class MonsterEntity extends Entity {
     
     @Override
     public void act(float delta) {
-    
+        if (hurtTimer > 0) {
+            hurtTimer -= delta;
+            if (hurtTimer <= 0) {
+                hurtTimer = 0;
+                switch (MathUtils.random(4)) {
+                    case 0:
+                        setMotion(MOVE_SPEED, 0);
+                        break;
+                    case 1:
+                        setMotion(MOVE_SPEED, 90);
+                        break;
+                    case 2:
+                        setMotion(MOVE_SPEED, 180);
+                        break;
+                    case 3:
+                        setMotion(MOVE_SPEED, 270);
+                        break;
+                    case 4:
+                        setMotion(0, 0);
+                        break;
+                }
+            }
+        }
     }
     
     @Override
