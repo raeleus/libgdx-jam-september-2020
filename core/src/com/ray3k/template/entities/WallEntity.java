@@ -9,10 +9,17 @@ import static com.ray3k.template.screens.GameScreen.*;
 
 public class WallEntity extends Entity {
     public static final Color DEBUG_COLOR = new Color();
+    float width;
+    float height;
+    
+    public WallEntity(float width, float height) {
+        this.width = width;
+        this.height = height;
+    }
     
     @Override
     public void create() {
-        setCollisionBox(0, 0, 16, 16, nullCollisionFilter);
+        setCollisionBox(0, 0, width, height, nullCollisionFilter);
     }
     
     @Override

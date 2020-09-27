@@ -55,6 +55,17 @@ public class PlayerEntity extends Entity {
             setSpeed(0);
         }
         
+        //teleport
+        if (gameScreen.isBindingJustPressed(ATTACK)) {
+            gameScreen.stage.addAction(Actions.run(() -> {
+                var addEntities = new Array<Entity>();
+                for (var entity : entityController.entities) {
+                    if (entity instanceof PlayerEntity || entity instanceof MonsterEntity) addEntities.add(entity);
+                }
+                core.transition(new GameScreen(addEntities, "test3"), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+            }));
+        }
+        
         //animation
         if (gameScreen.isBindingPressed(RIGHT)) {
             if (animationState.getCurrent(0).getAnimation() != PlayerAnimation.right) animationState.setAnimation(0, PlayerAnimation.right, true);
@@ -67,20 +78,20 @@ public class PlayerEntity extends Entity {
         }
         
         //attack
-        attackTimer = Utils.approach(attackTimer, 0, delta);
-        if (attackTimer == 0 && gameScreen.isBindingJustPressed(ATTACK)) {
-            attackTimer = ATTACK_DELAY;
-            int attackDirection = 0;
-            if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.up) attackDirection = 90;
-            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left) attackDirection = 180;
-            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.down) attackDirection = 270;
-            var attack = new AttackEntity(attackDirection);
-            entityController.add(attack);
-            if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.right)attack.setPosition(x + AttackEntity.SIZE / 2 + 8, y);
-            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left)attack.setPosition(x - AttackEntity.SIZE / 2 - 8, y);
-            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.up)attack.setPosition(x, y + AttackEntity.SIZE / 2 + 8);
-            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.down)attack.setPosition(x, y - AttackEntity.SIZE / 2 - 8);
-        }
+//        attackTimer = Utils.approach(attackTimer, 0, delta);
+//        if (attackTimer == 0 && gameScreen.isBindingJustPressed(ATTACK)) {
+//            attackTimer = ATTACK_DELAY;
+//            int attackDirection = 0;
+//            if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.up) attackDirection = 90;
+//            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left) attackDirection = 180;
+//            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.down) attackDirection = 270;
+//            var attack = new AttackEntity(attackDirection);
+//            entityController.add(attack);
+//            if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.right)attack.setPosition(x + AttackEntity.SIZE / 2 + 8, y);
+//            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.left)attack.setPosition(x - AttackEntity.SIZE / 2 - 8, y);
+//            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.up)attack.setPosition(x, y + AttackEntity.SIZE / 2 + 8);
+//            else if (animationState.getCurrent(0).getAnimation() == PlayerAnimation.down)attack.setPosition(x, y - AttackEntity.SIZE / 2 - 8);
+//        }
     }
     
     @Override

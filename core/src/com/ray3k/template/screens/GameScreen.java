@@ -95,25 +95,25 @@ public class GameScreen extends JamScreen {
         ogmoReader.addListener(new OgmoAdapter() {
             int levelWidth;
             int levelHeight;
-        
+
             @Override
             public void level(String ogmoVersion, int width, int height, int offsetX, int offsetY,
                               ObjectMap<String, OgmoValue> valuesMap) {
                 levelWidth = width;
                 levelHeight = height;
             }
-        
+
             @Override
             public void grid(int col, int row, int x, int y, int width, int height, int id) {
-                switch (id) {
-                    case 1:
-                        var wallEntity = new WallEntity();
-                        wallEntity.setPosition(x, y);
-                        entityController.add(wallEntity);
-                        break;
-                }
+//                switch (id) {
+//                    case 1:
+//                        var wallEntity = new WallEntity();
+//                        wallEntity.setPosition(x, y);
+//                        entityController.add(wallEntity);
+//                        break;
+//                }
             }
-            
+
             @Override
             public void entity(String name, int id, int x, int y, int width, int height, boolean flippedX,
                                boolean flippedY, int originX, int originY, int rotation, Array<EntityNode> nodes,
@@ -171,9 +171,14 @@ public class GameScreen extends JamScreen {
                         goalEntity.setPosition(x + 8, y - 8);
                         entityController.add(goalEntity);
                         break;
+                    case "wall":
+                        var wall = new WallEntity(width, height);
+                        wall.setPosition(x, y - height);
+                        entityController.add(wall);
+                        break;
                 }
             }
-        
+
             @Override
             public void decal(int centerX, int centerY, float scaleX, float scaleY, int rotation, String texture,
                               String folder) {
@@ -181,7 +186,7 @@ public class GameScreen extends JamScreen {
                 path = path.substring(0, path.length() - 4);
                 if (textureAtlas.findRegion(path) != null) entityController.add(new DecalEntity(path, centerX, centerY));
             }
-    
+
             @Override
             public void levelComplete() {
                 var cameraEntity = new CameraEntity(viewport, camera, player);
