@@ -34,13 +34,13 @@ public class WallEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        var rect = world.getRect(item);
-        if (rect != null) {
-            DEBUG_COLOR.set(Color.RED);
-            DEBUG_COLOR.a = .25f;
-            shapeDrawer.setColor(DEBUG_COLOR);
-            shapeDrawer.filledRectangle(rect.x, rect.y, rect.w, rect.h);
-        }
+//        var rect = world.getRect(item);
+//        if (rect != null) {
+//            DEBUG_COLOR.set(Color.RED);
+//            DEBUG_COLOR.a = .25f;
+//            shapeDrawer.setColor(DEBUG_COLOR);
+//            shapeDrawer.filledRectangle(rect.x, rect.y, rect.w, rect.h);
+//        }
     }
     
     @Override

@@ -62,13 +62,13 @@ public class MonsterEntity extends Entity {
     
     @Override
     public void draw(float delta) {
-        var rect = world.getRect(item);
-        if (rect != null) {
-            DEBUG_COLOR.set(Color.ORANGE);
-            shapeDrawer.setColor(DEBUG_COLOR);
-            shapeDrawer.setDefaultLineWidth(1f);
-            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
-        }
+//        var rect = world.getRect(item);
+//        if (rect != null) {
+//            DEBUG_COLOR.set(Color.ORANGE);
+//            shapeDrawer.setColor(DEBUG_COLOR);
+//            shapeDrawer.setDefaultLineWidth(1f);
+//            shapeDrawer.rectangle(rect.x, rect.y, rect.w, rect.h);
+//        }
     }
     
     @Override
