@@ -83,223 +83,244 @@ window
   index: -1
 
 textures2.png
-size: 2048,2048
+size: 4096,4096
 format: RGBA8888
 filter: Nearest,Nearest
 repeat: none
+game/bg
+  rotate: false
+  xy: 1, 3071
+  size: 960, 960
+  orig: 960, 960
+  offset: 0, 0
+  index: -1
+game/bg2
+  rotate: false
+  xy: 1, 2109
+  size: 960, 960
+  orig: 960, 960
+  offset: 0, 0
+  index: -1
 game/bush
   rotate: false
-  xy: 220, 1
+  xy: 464, 151
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 game/cow (1)
   rotate: false
-  xy: 354, 17
+  xy: 598, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (10)
   rotate: false
-  xy: 372, 17
+  xy: 616, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (11)
   rotate: false
-  xy: 390, 17
+  xy: 634, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (12)
   rotate: false
-  xy: 408, 17
+  xy: 652, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (13)
   rotate: false
-  xy: 426, 17
+  xy: 670, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (14)
   rotate: false
-  xy: 444, 17
+  xy: 688, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (15)
   rotate: false
-  xy: 462, 17
+  xy: 706, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (2)
   rotate: false
-  xy: 480, 17
+  xy: 724, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (3)
   rotate: false
-  xy: 498, 17
+  xy: 742, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (4)
   rotate: false
-  xy: 516, 17
+  xy: 760, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (5)
   rotate: false
-  xy: 534, 17
+  xy: 778, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (6)
   rotate: false
-  xy: 552, 17
+  xy: 796, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (7)
   rotate: false
-  xy: 570, 17
+  xy: 814, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (8)
   rotate: false
-  xy: 588, 17
+  xy: 832, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/cow (9)
   rotate: false
-  xy: 606, 17
+  xy: 850, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/dirt
   rotate: false
-  xy: 254, 1
+  xy: 498, 151
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 game/fence
   rotate: false
-  xy: 157, 1
+  xy: 401, 151
   size: 61, 32
   orig: 61, 32
   offset: 0, 0
   index: -1
 game/grassy
   rotate: false
-  xy: 322, 5
+  xy: 566, 155
   size: 30, 28
   orig: 32, 32
   offset: 1, 2
   index: -1
 game/hanging
   rotate: false
-  xy: 1, 1
+  xy: 245, 151
   size: 88, 32
   orig: 88, 32
   offset: 0, 0
   index: -1
+game/house
+  rotate: false
+  xy: 1, 1
+  size: 242, 182
+  orig: 283, 203
+  offset: 28, 12
+  index: -1
 game/map-test
   rotate: false
-  xy: 1, 997
+  xy: 1, 1147
   size: 960, 960
   orig: 960, 960
   offset: 0, 0
   index: -1
 game/map-test2
   rotate: false
-  xy: 1, 35
+  xy: 1, 185
   size: 960, 960
   orig: 960, 960
   offset: 0, 0
   index: -1
 game/monster
   rotate: false
-  xy: 624, 17
+  xy: 868, 167
   size: 16, 16
   orig: 16, 17
   offset: 0, 0
   index: -1
 game/obstacle
   rotate: false
-  xy: 642, 17
+  xy: 886, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0
   index: -1
 game/player
   rotate: true
-  xy: 696, 21
+  xy: 940, 171
   size: 12, 17
   orig: 16, 17
   offset: 4, 0
   index: -1
 game/sunflowerfence
   rotate: false
-  xy: 91, 1
+  xy: 335, 151
   size: 64, 32
   orig: 64, 32
   offset: 0, 0
   index: -1
 game/switch-off
   rotate: true
-  xy: 715, 23
+  xy: 959, 173
   size: 10, 14
   orig: 16, 16
   offset: 3, 1
   index: -1
 game/switch-on
   rotate: true
-  xy: 731, 23
+  xy: 959, 161
   size: 10, 14
   orig: 16, 16
   offset: 3, 1
   index: -1
 game/telepad
   rotate: false
-  xy: 678, 19
+  xy: 922, 169
   size: 16, 14
   orig: 16, 16
   offset: 0, 1
   index: -1
 game/tree
   rotate: false
-  xy: 288, 1
+  xy: 532, 151
   size: 32, 32
   orig: 32, 32
   offset: 0, 0
   index: -1
 game/wall
   rotate: false
-  xy: 660, 17
+  xy: 904, 167
   size: 16, 16
   orig: 16, 16
   offset: 0, 0

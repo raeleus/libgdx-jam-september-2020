@@ -30,12 +30,12 @@ public class GameScreen extends JamScreen {
     public static ShapeDrawer shapeDrawer;
     public boolean paused;
     private ChainVfxEffect vfxEffect;
-    private String levelName;
+    public String levelName;
     private Array<Entity> addEntities;
     private PlayerEntity player;
     
     public GameScreen() {
-        this(null, "test2");
+        this(null, "levela");
     }
     
     public GameScreen(Array<Entity> addEntities, String levelName) {

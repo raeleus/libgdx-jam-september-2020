@@ -62,7 +62,7 @@ public class PlayerEntity extends Entity {
                 for (var entity : entityController.entities) {
                     if (entity instanceof PlayerEntity || entity instanceof MonsterEntity) addEntities.add(entity);
                 }
-                core.transition(new GameScreen(addEntities, "test3"), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
+                core.transition(new GameScreen(addEntities, gameScreen.levelName == "levela" ? "levelb" : "levela"), new TransitionSquish(Color.PINK, Interpolation.fastSlow), 1f);
             }));
         }
         
